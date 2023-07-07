@@ -2,11 +2,15 @@ using UnityEngine;
 
 [CreateAssetMenu(menuName = "Key Bindings")]
 public class KeyBindings : ScriptableObject {
-    public KeyCode moveUp;
+    public KeyCode MoveUp;
 
-    public KeyCode moveDown;
+    public KeyCode MoveDown;
 
-    public KeyCode moveLeft;
+    public KeyCode MoveLeft;
 
-    public KeyCode moveRight;
+    public KeyCode MoveRight;
+
+    public KeyCode Ability1;
+
+    public KeyCode Ability2;
 }

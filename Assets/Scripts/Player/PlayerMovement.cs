@@ -21,19 +21,19 @@ public class PlayerMovement : MonoBehaviour {
 
     private Vector3 MoveDirection {
         get {
-            Vector3 yDirection = _controlScheme.moveUp
-                ? _controlScheme.moveDown
+            Vector3 yDirection = _controlScheme.MoveUp
+                ? _controlScheme.MoveDown
                 ? default
                 : Vector3.up
-                : _controlScheme.moveDown
+                : _controlScheme.MoveDown
                 ? Vector3.down
                 : default;
 
-            Vector3 xDirection = _controlScheme.moveLeft
-                ? _controlScheme.moveRight
+            Vector3 xDirection = _controlScheme.MoveLeft
+                ? _controlScheme.MoveRight
                 ? default
                 : Vector3.left
-                : _controlScheme.moveRight
+                : _controlScheme.MoveRight
                 ? Vector3.right
                 : default;
 

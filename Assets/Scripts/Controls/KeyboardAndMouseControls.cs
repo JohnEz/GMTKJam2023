@@ -3,11 +3,17 @@ using UnityEngine;
 public class KeyboardAndMouseControls : ControlScheme {
     public KeyBindings _keyBindings;
 
-    public override bool moveUp => Input.GetKey(_keyBindings.moveUp);
+    public override bool MoveUp => Input.GetKey(_keyBindings.MoveUp);
 
-    public override bool moveDown => Input.GetKey(_keyBindings.moveDown);
+    public override bool MoveDown => Input.GetKey(_keyBindings.MoveDown);
 
-    public override bool moveLeft => Input.GetKey(_keyBindings.moveLeft);
+    public override bool MoveLeft => Input.GetKey(_keyBindings.MoveLeft);
 
-    public override bool moveRight => Input.GetKey(_keyBindings.moveRight);
+    public override bool MoveRight => Input.GetKey(_keyBindings.MoveRight);
+
+    public override bool Ability1 => Input.GetKey(_keyBindings.Ability1);
+
+    public override bool Ability2 => Input.GetKey(_keyBindings.Ability2);
+
+    public override Vector3 TargetPosition => Input.mousePosition;
 }

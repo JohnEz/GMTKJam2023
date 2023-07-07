@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e07e67327b274b44af9b4f7e8066610, type: 3}
   m_Name: DefaultKeyBindings
   m_EditorClassIdentifier: 
-  moveUp: 119
-  moveDown: 115
-  moveLeft: 97
-  moveRight: 100
+  MoveUp: 119
+  MoveDown: 115
+  MoveLeft: 97
+  MoveRight: 100
+  Ability1: 113
+  Ability2: 101
