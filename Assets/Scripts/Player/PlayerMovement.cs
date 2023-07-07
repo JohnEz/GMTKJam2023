@@ -1,13 +1,14 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterMovement))]
 public class PlayerMovement : MonoBehaviour {
     private ControlScheme _controlScheme;
 
-    [SerializeField]
-    private PlayerStats _playerStats;
+    private CharacterMovement _characterMovement;
 
     void Awake() {
         _controlScheme = GetComponent<ControlScheme>();
+        _characterMovement = GetComponent<CharacterMovement>();
 
         if (!_controlScheme) {
             Debug.Log("PlayerMovement: No control scheme found on player!");
@@ -15,11 +16,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
-        Vector3 direction = MoveDirection;
-
-        if (direction.magnitude != 0) {
-            transform.position += direction * _playerStats.MoveSpeed * Time.deltaTime;
-        }
+        _characterMovement.MoveDirection = MoveDirection;
     }
 
     private Vector3 MoveDirection {

@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(CharacterStats))]
 public class CharacterMovement : MonoBehaviour {
     public Vector3 MoveDirection { get; set; }
 
@@ -9,13 +8,17 @@ public class CharacterMovement : MonoBehaviour {
     private Animator _myAnimator;
 
     [SerializeField]
-    private float MOVE_SPEED = 4f;
+    private CharacterStats _playerStats;
+
+    public void Awake() {
+        _playerStats = GetComponent<CharacterStats>();
+    }
 
     public void Update() {
         if (_myAnimator) {
             _myAnimator.SetFloat("moveVelocity", MoveDirection.magnitude);
         }
 
-        transform.position += MoveDirection * MOVE_SPEED * Time.deltaTime;
+        transform.position += MoveDirection * _playerStats.MoveSpeed * Time.deltaTime;
     }
 }

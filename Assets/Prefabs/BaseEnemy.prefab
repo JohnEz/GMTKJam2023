@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8603467735009972535}
   - component: {fileID: 1156246916742907674}
+  - component: {fileID: 1923494030384655132}
   - component: {fileID: 8427896825273160408}
   m_Layer: 0
   m_Name: BaseEnemy
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283efb73f13388140b04bd9ab2c0f2d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1923494030384655132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444906719881861685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MoveSpeed: 4
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myAnimator: {fileID: 8563483024510816505}
-  MOVE_SPEED: 4
+  _playerStats: {fileID: 0}
 --- !u!1 &6104142479208444581
 GameObject:
   m_ObjectHideFlags: 0
