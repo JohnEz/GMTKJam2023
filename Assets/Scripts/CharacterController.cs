@@ -18,13 +18,30 @@ public class CharacterController : MonoBehaviour {
 
     private CharacterMovement _movement;
 
+    private float ROTATION_DURATION = 5f;
+    private float ROTATION_DURATION_RANDOM = .2f;
+
+    private float currentRotationTimer = 0f;
+    private float currentRotationDuration = 5f;
+
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
     }
 
     public void Update() {
+        CalculateRotationSwitch();
         MovementLogic();
         AimingLogic();
+    }
+
+    private void CalculateRotationSwitch() {
+        currentRotationTimer += Time.deltaTime;
+
+        if (currentRotationTimer >= currentRotationDuration) {
+            isCircleClockwise = !isCircleClockwise;
+            currentRotationTimer = 0f;
+            currentRotationDuration = Random.Range(ROTATION_DURATION * (1 - ROTATION_DURATION_RANDOM), ROTATION_DURATION * (1 + ROTATION_DURATION_RANDOM));
+        }
     }
 
     private void MovementLogic() {
