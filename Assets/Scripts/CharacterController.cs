@@ -6,10 +6,10 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour {
     private Transform target;
 
-    private float _targetRange = 2f;
+    private float _targetRange = 3f;
     private float RANGE_TOLERANCE = 0.5f;
 
-    private float rotationDirection = 1;
+    private bool isCircleClockwise = true;
 
     private CharacterMovement _movement;
 
@@ -36,13 +36,20 @@ public class CharacterController : MonoBehaviour {
     private Vector3 MoveTowardsTargetDistance() {
         float moveCloser = GetDistanceToTarget() > _targetRange ? 1 : -1;
 
-        Vector3 directionToTarget = (GetTargetPosition() - transform.position).normalized;
+        Vector3 directionToTarget = GetDirectionToTarget();
 
-        return directionToTarget;
+        return directionToTarget * moveCloser;
     }
 
     private Vector3 RunAroundTarget() {
-        return Vector3.zero;
+        float circlingAngle = isCircleClockwise ? Mathf.PI / 2 : 3 * Mathf.PI / 2;
+
+        Vector3 directionToTarget = GetDirectionToTarget();
+
+        float angle = Mathf.Atan2(directionToTarget.y, directionToTarget.x) + circlingAngle;
+        Vector3 targetDirection = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+
+        return targetDirection;
     }
 
     private float GetDistanceToTarget() {
@@ -51,5 +58,9 @@ public class CharacterController : MonoBehaviour {
 
     private Vector3 GetTargetPosition() {
         return target != null ? target.position : Vector3.zero;
+    }
+
+    private Vector3 GetDirectionToTarget() {
+        return (GetTargetPosition() - transform.position).normalized;
     }
 }
