@@ -4,7 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class CharacterController : MonoBehaviour {
+
+    [SerializeField]
     private Transform target;
+
+    [SerializeField]
+    private Transform _weaponAnchor;
 
     private float _targetRange = 3f;
     private float RANGE_TOLERANCE = 0.5f;
@@ -19,6 +24,7 @@ public class CharacterController : MonoBehaviour {
 
     public void Update() {
         MovementLogic();
+        AimingLogic();
     }
 
     private void MovementLogic() {
@@ -31,6 +37,15 @@ public class CharacterController : MonoBehaviour {
         }
 
         _movement.MoveDirection = moveDirection;
+    }
+
+    private void AimingLogic() {
+        Vector3 targetDirection = GetTargetPosition() - transform.position;
+
+        float angle = Mathf.Atan2(targetDirection.y, targetDirection.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        _weaponAnchor.rotation = rotation;
     }
 
     private Vector3 MoveTowardsTargetDistance() {

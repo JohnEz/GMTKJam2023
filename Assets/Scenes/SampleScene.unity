@@ -431,6 +431,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _keyBindings: {fileID: 11400000, guid: 8802f0488e3a63544a31e0e8a0fd315b, type: 2}
+--- !u!4 &1017035331 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4861394719585359151, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+  m_PrefabInstance: {fileID: 502867435}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1857535088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -438,6 +443,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1017035331}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
       value: BaseEnemy
