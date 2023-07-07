@@ -17,6 +17,7 @@ public class CharacterController : MonoBehaviour {
     private bool isCircleClockwise = true;
 
     private CharacterMovement _movement;
+    private CharacterAttacks _attacks;
 
     private float ROTATION_DURATION = 5f;
     private float ROTATION_DURATION_RANDOM = .2f;
@@ -26,12 +27,19 @@ public class CharacterController : MonoBehaviour {
 
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
+        _attacks = GetComponent<CharacterAttacks>();
     }
 
     public void Update() {
         CalculateRotationSwitch();
         MovementLogic();
         AimingLogic();
+
+        // temp
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            _attacks.Attack(target);
+        }
     }
 
     private void CalculateRotationSwitch() {
