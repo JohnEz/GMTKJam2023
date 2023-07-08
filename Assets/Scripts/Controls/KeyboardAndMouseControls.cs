@@ -15,5 +15,11 @@ public class KeyboardAndMouseControls : MonoBehaviour, ControlScheme {
 
     public bool Ability2 => Input.GetKey(_keyBindings.Ability2);
 
-    public Vector3 TargetPosition => Input.mousePosition;
+    public Vector3 TargetPosition {
+        get {
+            Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            worldPosition.z = 0;
+            return worldPosition;
+        }
+    }
 }
