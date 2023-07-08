@@ -11,6 +11,9 @@ public class CharacterController : MonoBehaviour {
     [SerializeField]
     private Transform _weaponAnchor;
 
+    private float MIN_RANGE = 3f;
+    private float MAX_RANGE = 10f;
+
     private float _targetRange = 9f;
     private float RANGE_TOLERANCE = 0.5f;
 
@@ -23,11 +26,11 @@ public class CharacterController : MonoBehaviour {
     [SerializeField]
     private Animator _animator;
 
-    private float ROTATION_DURATION = 5f;
-    private float ROTATION_DURATION_RANDOM = .2f;
+    private float RANDOM_ACTION_DELAY = 5f;
+    private float RANDOM_ACTION_VARIANCE = .33f;
 
-    private float currentRotationTimer = 0f;
-    private float currentRotationDuration = 5f;
+    private float randomActionTimer = 0f;
+    private float currentrandomActionDelay = 5f;
 
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
@@ -42,7 +45,7 @@ public class CharacterController : MonoBehaviour {
             return;
         }
 
-        CalculateRotationSwitch();
+        CalculateRandomAction();
         MovementLogic();
         AimingLogic();
 
@@ -50,19 +53,35 @@ public class CharacterController : MonoBehaviour {
         _attacks.Attack(target);
     }
 
+    private void CalculateRandomAction() {
+        randomActionTimer += Time.deltaTime;
+
+        if (randomActionTimer >= currentrandomActionDelay) {
+            randomActionTimer = 0f;
+            currentrandomActionDelay = Random.Range(RANDOM_ACTION_DELAY * (1 - RANDOM_ACTION_VARIANCE), RANDOM_ACTION_DELAY * (1 + RANDOM_ACTION_VARIANCE));
+
+            // choose a random action
+            float result = Random.value;
+
+            if (result >= 0.5) {
+                FlipRotationDirection();
+            } else {
+                ChangeRange();
+            }
+        }
+    }
+
+    private void FlipRotationDirection() {
+        isCircleClockwise = !isCircleClockwise;
+    }
+
+    private void ChangeRange() {
+        _targetRange = Random.Range(MIN_RANGE, MAX_RANGE);
+    }
+
     private void HandleDeath() {
         _movement.MoveDirection = Vector3.zero;
         _animator.SetTrigger("onDeath");
-    }
-
-    private void CalculateRotationSwitch() {
-        currentRotationTimer += Time.deltaTime;
-
-        if (currentRotationTimer >= currentRotationDuration) {
-            isCircleClockwise = !isCircleClockwise;
-            currentRotationTimer = 0f;
-            currentRotationDuration = Random.Range(ROTATION_DURATION * (1 - ROTATION_DURATION_RANDOM), ROTATION_DURATION * (1 + ROTATION_DURATION_RANDOM));
-        }
     }
 
     private void MovementLogic() {
