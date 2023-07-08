@@ -16,12 +16,15 @@ public class CharacterMovement : MonoBehaviour {
         _body = GetComponent<Rigidbody2D>();
     }
 
-    public void Update() {
+    public void FixedUpdate() {
         if (_myAnimator) {
             _myAnimator.SetFloat("moveVelocity", MoveDirection.magnitude);
         }
 
-        Vector3 newPosition = transform.position + MoveDirection * _playerStats.MoveSpeed * Time.deltaTime;
+        Vector2 moveDirection = MoveDirection;
+
+        Vector3 newPosition = _body.position + (moveDirection * _playerStats.MoveSpeed) * Time.fixedDeltaTime;
+
         _body.MovePosition(newPosition);
     }
 }
