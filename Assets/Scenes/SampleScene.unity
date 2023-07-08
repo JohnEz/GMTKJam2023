@@ -7991,7 +7991,7 @@ MonoBehaviour:
   isGameOver: 0
   skipIntro: 0
   gameState: 0
-  introDirector: {fileID: 0}
+  introDirector: {fileID: 1035367921}
 --- !u!4 &1027611263
 Transform:
   m_ObjectHideFlags: 0
