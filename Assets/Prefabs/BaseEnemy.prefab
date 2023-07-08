@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1923494030384655132}
   - component: {fileID: 8427896825273160408}
   - component: {fileID: 3852860896828845083}
+  - component: {fileID: 1276784477387354522}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -90,6 +91,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   arrowPrefab: {fileID: 493542880508337329, guid: b71effe51d80a3b49a96f3fe1b691e06, type: 3}
+  _cooldownDuration: 2
+--- !u!58 &1276784477387354522
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444906719881861685}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &6104142479208444581
 GameObject:
   m_ObjectHideFlags: 0

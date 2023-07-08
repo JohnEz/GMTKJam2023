@@ -11,7 +11,7 @@ public class CharacterController : MonoBehaviour {
     [SerializeField]
     private Transform _weaponAnchor;
 
-    private float _targetRange = 3f;
+    private float _targetRange = 9f;
     private float RANGE_TOLERANCE = 0.5f;
 
     private bool isCircleClockwise = true;
@@ -36,10 +36,7 @@ public class CharacterController : MonoBehaviour {
         AimingLogic();
 
         // temp
-
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            _attacks.Attack(target);
-        }
+        _attacks.Attack(target);
     }
 
     private void CalculateRotationSwitch() {
