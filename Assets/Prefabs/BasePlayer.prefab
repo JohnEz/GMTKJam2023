@@ -45,7 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82c8087fc123644e853eb1b76425686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _abilities: []
+  _abilities:
+  - CastTime: 0
+    _cooldown: 1
+    _effect: {fileID: 1932630230815302502, guid: 577e01237996d4141abd03972de0eeb5, type: 3}
+  - CastTime: 0.1
+    _cooldown: 3
+    _effect: {fileID: 1932630230815302502, guid: 318967ac3f0e2b546815c16fffa7561b, type: 3}
 --- !u!114 &1994919731284332249
 MonoBehaviour:
   m_ObjectHideFlags: 0
