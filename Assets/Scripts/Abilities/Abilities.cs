@@ -6,12 +6,9 @@ public class Abilities : MonoBehaviour {
     [SerializeField]
     private List<Ability> _abilities;
 
-    private CharacterStats _characterStats;
-
     private CastController _castController;
 
     public void Awake() {
-        _characterStats = GetComponentInParent<CharacterStats>();
         _castController = GetComponentInParent<CastController>();
     }
 
@@ -31,7 +28,7 @@ public class Abilities : MonoBehaviour {
 
                 GameObject effectInstance = Instantiate(ability.Effect, targetPosition, default);
                 Effect effect = effectInstance.GetComponent<Effect>();
-                effect.Execute(_characterStats);
+                effect.Execute(transform.parent);
             } catch (Exception) {
                 // Oh well.
             }

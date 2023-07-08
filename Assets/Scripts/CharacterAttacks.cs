@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 
 public class CharacterAttacks : MonoBehaviour {
-    private CharacterStats _myStats;
     private CastController _castController;
 
     [SerializeField]
@@ -11,7 +10,6 @@ public class CharacterAttacks : MonoBehaviour {
     public Ability arrowAbility;
 
     private void Awake() {
-        _myStats = GetComponent<CharacterStats>();
         _castController = GetComponent<CastController>();
     }
 
@@ -26,7 +24,7 @@ public class CharacterAttacks : MonoBehaviour {
 
                 GameObject effectInstance = Instantiate(arrowAbility.Effect, target.position, default);
                 Effect effect = effectInstance.GetComponent<Effect>();
-                effect.Execute(_myStats);
+                effect.Execute(transform);
             } catch (Exception) {
                 // Oh well.
             }

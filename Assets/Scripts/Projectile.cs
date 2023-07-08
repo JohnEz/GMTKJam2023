@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
@@ -8,7 +6,7 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private float MOVE_SPEED = 20f;
 
-    private CharacterStats _caster;
+    private Transform _origin;
 
     [SerializeField]
     private AudioClip _onSpawnSFX;
@@ -19,10 +17,13 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private AudioClip _onHitSFX;
 
-    public void Setup(Vector3 direction, CharacterStats caster) {
-        _caster = caster;
+    [SerializeField]
+    private bool _destroyOnImpact = true;
 
-        Direction = direction.normalized;
+    public void Launch(Transform origin, Vector3 target) {
+        _origin = origin;
+
+        Direction = (target - origin.position).normalized;
 
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
@@ -30,7 +31,6 @@ public class Projectile : MonoBehaviour {
         transform.rotation = rotation;
 
         AudioManager.Instance.PlaySound(_onSpawnSFX, transform.position);
-
         AudioManager.Instance.PlaySound(_onloopSFX, transform);
     }
 
@@ -46,14 +46,16 @@ public class Projectile : MonoBehaviour {
             return;
         }
 
-        CharacterStats hitCharacter = hitDamagable.GetComponent<CharacterStats>();
+        Damagable originDamagable = _origin.GetComponent<Damagable>();
 
-        if (hitCharacter && hitCharacter != _caster) {
+        if (hitDamagable != originDamagable) {
             hitDamagable.TakeDamage(10);
 
             AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
 
-            Destroy(gameObject);
+            if (_destroyOnImpact) {
+                Destroy(gameObject);
+            }
         }
     }
 }

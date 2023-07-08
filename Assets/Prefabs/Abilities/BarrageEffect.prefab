@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304443583359402424, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
       propertyPath: m_Name
-      value: BarageEff
+      value: BarageEffect 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
@@ -62,7 +62,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8304443583359402424, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
   m_PrefabInstance: {fileID: 7632857566602961630}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7100320480287170742
+--- !u!114 &8292022660427361721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b54f5c85c902c244b1b26ea94dd65fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _repeat: 4
+  _repeatPeriodSeconds: 0.3
   _projectilePrefab: {fileID: 493542880508337329, guid: b71effe51d80a3b49a96f3fe1b691e06, type: 3}
-  _attackSound: {fileID: 8300000, guid: da789595590965c4593fc48d353c005c, type: 3}
-  _numProjectiles: 4
-  _launchPeriodSeconds: 0.3
+  _attackSound: {fileID: 0}
