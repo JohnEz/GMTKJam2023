@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameManager : Singleton<GameManager> {
 
@@ -10,8 +11,12 @@ public class GameManager : Singleton<GameManager> {
 
     public bool isGameOver = false;
 
+    public bool skipIntro = false;
+
     public enum GameState {Intro, Cutscene, Combat, GameOver};
     public GameState gameState = GameState.Intro;
+
+    public GameObject introDirector;
 
     public void EndIntro() {
         TransitionGameState(GameState.Combat);
@@ -45,6 +50,12 @@ public class GameManager : Singleton<GameManager> {
         });
 
         Player.OnDeath += HandlePlayerDeath;
+
+        if(skipIntro) {
+            TransitionGameState(GameState.Combat);
+        } else if (introDirector) {
+            introDirector.GetComponent<PlayableDirector>().Play();
+        }
     }
 
     private void HandlePlayerDeath() {

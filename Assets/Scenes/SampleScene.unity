@@ -8005,7 +8005,9 @@ MonoBehaviour:
   - {fileID: 1759162693}
   Player: {fileID: 1017035335}
   isGameOver: 0
+  skipIntro: 1
   gameState: 0
+  introDirector: {fileID: 1035367921}
 --- !u!4 &1027611263
 Transform:
   m_ObjectHideFlags: 0
@@ -8078,7 +8080,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 78f3c668e207916418346e298c21b00c, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
