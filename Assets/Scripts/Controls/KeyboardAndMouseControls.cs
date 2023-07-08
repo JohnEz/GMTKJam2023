@@ -11,7 +11,7 @@ public class KeyboardAndMouseControls : MonoBehaviour, ControlScheme {
 
     public bool MoveRight => Input.GetKey(_keyBindings.MoveRight);
 
-    public bool Ability1 => Input.GetKey(_keyBindings.Ability1);
+    public bool Ability1 => Input.GetMouseButton(_keyBindings.Ability1);
 
     public bool Ability2 => Input.GetKey(_keyBindings.Ability2);
 

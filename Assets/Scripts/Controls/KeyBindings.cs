@@ -10,7 +10,7 @@ public class KeyBindings : ScriptableObject {
 
     public KeyCode MoveRight;
 
-    public KeyCode Ability1;
+    public int Ability1;
 
     public KeyCode Ability2;
 }
