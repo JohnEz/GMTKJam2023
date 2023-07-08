@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340733516}
+  - component: {fileID: 340733517}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -162,6 +163,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: -200, y: 20}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &340733517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340733515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a322e51b9047b6a409a2d4cf844fd85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 1351033438}
+  damageBar: {fileID: 1917711537}
+  _myStats: {fileID: 1017035335}
 --- !u!1001 &502867435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -457,6 +473,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4861394719585359151, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
   m_PrefabInstance: {fileID: 502867435}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1017035335 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3231708863265726656, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+  m_PrefabInstance: {fileID: 502867435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1259969348
 GameObject:
   m_ObjectHideFlags: 0
