@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1923494030384655132}
   - component: {fileID: 8427896825273160408}
   - component: {fileID: 3852860896828845083}
+  - component: {fileID: 1924203386141499780}
   - component: {fileID: 1276784477387354522}
   - component: {fileID: 7948593720473592109}
   m_Layer: 0
@@ -64,7 +65,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Name: Unknown
   MoveSpeed: 4
+  _maxHealth: 100
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,8 +94,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611af93a610ec074aa156d9e64ba8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arrowCastSFX: {fileID: 8300000, guid: 7833dc7f8375e9044b3b25b7fa546070, type: 3}
   arrowPrefab: {fileID: 493542880508337329, guid: b71effe51d80a3b49a96f3fe1b691e06, type: 3}
+  _attackSound: {fileID: 0}
   _cooldownDuration: 2
+  arrowAbility:
+    CastTime: 0.4
+    _cooldown: 2
+    _effect: {fileID: 0}
+--- !u!114 &1924203386141499780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444906719881861685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33e2a9d11ab6c341b3fa735c0f2e769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsCasting: 0
+  OnCastStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCastFail:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCastSuccess:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1276784477387354522
 CircleCollider2D:
   m_ObjectHideFlags: 0

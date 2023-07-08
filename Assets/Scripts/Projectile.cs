@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour {
     public void Setup(Vector3 direction, CharacterStats caster) {
         _caster = caster;
 
-        Direction = direction;
+        Direction = direction.normalized;
 
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
