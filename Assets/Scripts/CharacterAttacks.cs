@@ -9,6 +9,9 @@ public class CharacterAttacks : MonoBehaviour {
     private GameObject arrowPrefab;
 
     [SerializeField]
+    private AudioClip _attackSound;
+
+    [SerializeField]
     private float _cooldownDuration = 2f;
 
     private float _timeOffCooldown = 0;
@@ -36,5 +39,7 @@ public class CharacterAttacks : MonoBehaviour {
         Projectile projectile = arrow.GetComponent<Projectile>();
 
         projectile.Setup(direction, _myStats);
+
+        AudioManager.Instance.PlaySound(_attackSound, transform.position);
     }
 }

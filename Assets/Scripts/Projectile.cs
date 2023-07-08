@@ -10,6 +10,15 @@ public class Projectile : MonoBehaviour {
 
     private CharacterStats _caster;
 
+    [SerializeField]
+    private AudioClip _onSpawnSFX;
+
+    [SerializeField]
+    private AudioClip _onloopSFX;
+
+    [SerializeField]
+    private AudioClip _onHitSFX;
+
     public void Setup(Vector3 direction, CharacterStats caster) {
         _caster = caster;
 
@@ -19,6 +28,10 @@ public class Projectile : MonoBehaviour {
         Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         transform.rotation = rotation;
+
+        AudioManager.Instance.PlaySound(_onSpawnSFX, transform.position);
+
+        AudioManager.Instance.PlaySound(_onloopSFX, transform);
     }
 
     // Update is called once per frame
@@ -31,6 +44,9 @@ public class Projectile : MonoBehaviour {
 
         if (hitCharacter && hitCharacter != _caster) {
             hitCharacter.TakeDamage(10);
+
+            AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
+
             Destroy(gameObject);
         }
     }
