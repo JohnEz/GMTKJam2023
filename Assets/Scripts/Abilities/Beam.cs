@@ -32,6 +32,8 @@ public class Beam : MonoBehaviour {
 
         _isActive = true;
 
+        CameraManager.Instance.ShakeCamera(5, _duration);
+
         //TEMP
         Destroy(gameObject, _duration);
     }
@@ -40,6 +42,10 @@ public class Beam : MonoBehaviour {
     }
 
     private void Update() {
+        if (!_isActive) {
+            return;
+        }
+
         FaceMouse();
 
         foreach (Damagable target in _targets.Keys) {
@@ -52,6 +58,10 @@ public class Beam : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
+        if (!_isActive) {
+            return;
+        }
+
         Damagable hitDamagable = collision.gameObject.GetComponent<Damagable>();
 
         if (!hitDamagable) {
