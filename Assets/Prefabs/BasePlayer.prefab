@@ -120,7 +120,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9a796bbec29e6ca49bb041171d6a8a7a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -168,6 +168,7 @@ GameObject:
   - component: {fileID: 8090247001890752873}
   - component: {fileID: 5851023122615115648}
   - component: {fileID: 585648398445223456}
+  - component: {fileID: 532630666995611713}
   m_Layer: 0
   m_Name: BasePlayer
   m_TagString: Untagged
@@ -295,6 +296,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &532630666995611713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4731680491587793111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a80ab72c92f1e6e419e588870051bd9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashTarget: {fileID: 3331719314240129617}
 --- !u!1 &5105694057839450807
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8679568891471036691}
   - component: {fileID: 2160619530682072454}
+  - component: {fileID: 3331719314240129617}
   m_Layer: 0
   m_Name: TokenAnchor
   m_TagString: Untagged
@@ -349,6 +364,53 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3331719314240129617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5105694057839450807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a339ce84e6f075c4e9e5a697b9661194, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashTime: 0.125
+  _flashCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0.0036510078
+      outSlope: -0.004005078
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.30400515
+      outWeight: 0.27929717
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2
+      outSlope: 0
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &6572765805325707078
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,10 +40,16 @@ public class Projectile : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
-        CharacterStats hitCharacter = collision.gameObject.GetComponent<CharacterStats>();
+        Damagable hitDamagable = collision.gameObject.GetComponent<Damagable>();
+
+        if (!hitDamagable) {
+            return;
+        }
+
+        CharacterStats hitCharacter = hitDamagable.GetComponent<CharacterStats>();
 
         if (hitCharacter && hitCharacter != _caster) {
-            hitCharacter.TakeDamage(10);
+            hitDamagable.TakeDamage(10);
 
             AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
 
