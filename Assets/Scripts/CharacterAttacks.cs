@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class CharacterAttacks : MonoBehaviour {
     private CharacterStats _myStats;
+    private CastController _castController;
+
+    [SerializeField]
+    private AudioClip arrowCastSFX;
 
     [SerializeField]
     private GameObject arrowPrefab;
@@ -14,17 +18,24 @@ public class CharacterAttacks : MonoBehaviour {
 
     private float _timeOffCooldown = 0;
 
+    public Ability arrowAbility;
+
     private void Awake() {
         _myStats = GetComponent<CharacterStats>();
+        _castController = GetComponent<CastController>();
     }
 
     public void Attack(Transform target) {
-        if (IsAttackOnCooldown()) {
+        if (IsAttackOnCooldown() || _castController.IsCasting) {
             return;
         }
 
-        _timeOffCooldown = Time.time + _cooldownDuration;
-        FireArrow(target.position - transform.position);
+        _castController.Cast(arrowAbility, () => {
+            _timeOffCooldown = Time.time + _cooldownDuration;
+            FireArrow(target.position - transform.position);
+        }, () => {
+            AudioManager.Instance.PlaySound(arrowCastSFX, transform);
+        });
     }
 
     private bool IsAttackOnCooldown() {

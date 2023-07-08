@@ -3,8 +3,7 @@ using UnityEngine;
 
 [Serializable]
 public class Ability {
-    [SerializeField]
-    private int _castTime = 0;
+    public float CastTime = 0.4f;
 
     [SerializeField]
     private int _cooldown = 0;
