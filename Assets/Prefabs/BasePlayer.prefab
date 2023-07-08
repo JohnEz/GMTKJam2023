@@ -52,6 +52,9 @@ MonoBehaviour:
   - CastTime: 0.1
     _cooldown: 3
     _effect: {fileID: 1932630230815302502, guid: 318967ac3f0e2b546815c16fffa7561b, type: 3}
+  - CastTime: 1
+    _cooldown: 10
+    _effect: {fileID: 1932630230815302502, guid: 6c4fec5f72c27924491639278c0032f1, type: 3}
 --- !u!114 &1994919731284332249
 MonoBehaviour:
   m_ObjectHideFlags: 0

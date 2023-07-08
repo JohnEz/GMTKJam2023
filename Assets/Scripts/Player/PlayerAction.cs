@@ -15,6 +15,8 @@ public class PlayerAction : MonoBehaviour {
             ? 0
             : _playerControls.Ability2
             ? 1
+            : _playerControls.Ability3
+            ? 2
             : null;
 
         if (abilityIndex != null) {

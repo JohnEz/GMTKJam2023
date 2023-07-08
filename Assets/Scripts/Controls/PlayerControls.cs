@@ -9,17 +9,21 @@ public class PlayerControls : MonoBehaviour, ControlScheme {
 
     private ControlScheme _controlScheme;
 
-    public bool MoveUp => _controlScheme.MoveUp;
+    public bool ControlsEnabled = true;
 
-    public bool MoveDown => _controlScheme.MoveDown;
+    public bool MoveUp => ControlsEnabled && _controlScheme.MoveUp;
 
-    public bool MoveLeft => _controlScheme.MoveLeft;
+    public bool MoveDown => ControlsEnabled && _controlScheme.MoveDown;
 
-    public bool MoveRight => _controlScheme.MoveRight;
+    public bool MoveLeft => ControlsEnabled && _controlScheme.MoveLeft;
 
-    public bool Ability1 => _controlScheme.Ability1;
+    public bool MoveRight => ControlsEnabled && _controlScheme.MoveRight;
 
-    public bool Ability2 => _controlScheme.Ability2;
+    public bool Ability1 => ControlsEnabled && _controlScheme.Ability1;
+
+    public bool Ability2 => ControlsEnabled && _controlScheme.Ability2;
+
+    public bool Ability3 => ControlsEnabled && _controlScheme.Ability3;
 
     public Vector3 TargetPosition => _controlScheme.TargetPosition;
 

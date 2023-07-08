@@ -13,5 +13,7 @@ public interface ControlScheme {
 
     bool Ability2 { get; }
 
+    bool Ability3 { get; }
+
     Vector3 TargetPosition { get; }
 }
