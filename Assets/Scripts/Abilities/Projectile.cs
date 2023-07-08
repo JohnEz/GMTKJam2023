@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
@@ -20,6 +21,14 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private bool _destroyOnImpact = true;
 
+    [SerializeField]
+    private List<GameObject> _missEffects;
+
+    [SerializeField]
+    private float _maxDistance = -1f;
+
+    private float _totalDistance = 0f;
+
     public void Launch(Transform origin, Vector3 target) {
         _origin = origin;
 
@@ -36,7 +45,18 @@ public class Projectile : MonoBehaviour {
 
     // Update is called once per frame
     private void Update() {
-        transform.position += Direction * MOVE_SPEED * Time.deltaTime;
+        float distance = MOVE_SPEED * Time.deltaTime;
+        if (_maxDistance >= 0) {
+            distance = Mathf.Clamp(distance, distance, _maxDistance - _totalDistance);
+        }
+
+        _totalDistance += distance;
+
+        transform.position += Direction * distance;
+
+        if (_maxDistance >= 0 && _totalDistance >= _maxDistance) {
+            OnMiss();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
@@ -56,6 +76,18 @@ public class Projectile : MonoBehaviour {
             if (_destroyOnImpact) {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void OnMiss() {
+        foreach (GameObject missEffect in _missEffects) {
+            GameObject effectInstance = Instantiate(missEffect, transform.position, default);
+            Effect effect = effectInstance.GetComponent<Effect>();
+            effect.Execute(transform);
+        }
+
+        if (_destroyOnImpact) {
+            Destroy(gameObject);
         }
     }
 }

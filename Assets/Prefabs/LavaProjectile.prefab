@@ -54,6 +54,9 @@ MonoBehaviour:
   _onloopSFX: {fileID: 0}
   _onHitSFX: {fileID: 0}
   _destroyOnImpact: 1
+  _missEffects:
+  - {fileID: 1932630230815302502, guid: d4ea0c77c63c7bb4d92beabb31495c34, type: 3}
+  _maxDistance: 5
 --- !u!114 &8592674802835073797
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,9 +83,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: 0}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.5
 --- !u!50 &4532680692829751849
 Rigidbody2D:
   serializedVersion: 4
