@@ -16,26 +16,22 @@ public class Abilities : MonoBehaviour {
     public void TryExecute(int index, Vector3 targetPosition) {
         Ability ability = GetAbility(index);
         if (ability == null) {
-            //throw new Exception("Abilities: Invalid ability specified to execute!");
             return;
         }
 
-        if (_castController.IsCasting) {
-            //throw new Exception("Abilities: Attempt to execute ability while casting!");
+        if (_castController.IsCasting || ability.IsCoolingDown) {
             return;
         }
 
         _castController.Cast(ability, () => {
-            try {
-                ability.ClaimCooldown();
+            ability.StartCooldown();
 
-                GameObject effectInstance = Instantiate(ability.Effect, targetPosition, default);
-                Effect effect = effectInstance.GetComponent<Effect>();
-                effect.Execute(transform.parent);
-            } catch (Exception) {
-                // Oh well.
-            }
+            GameObject effectInstance = Instantiate(ability.Effect, targetPosition, default);
+            Effect effect = effectInstance.GetComponent<Effect>();
+            effect.Execute(transform.parent);
         }, null);
+
+        return;
     }
 
     private Ability GetAbility(int index) {

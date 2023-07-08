@@ -19,11 +19,7 @@ public class Ability {
 
     public bool IsCoolingDown { get => _isCoolingDown; }
 
-    public void ClaimCooldown() {
-        if (_isCoolingDown) {
-            throw new Exception("Ability on cooldown!");
-        }
-
+    public void StartCooldown() {
         _timeOffCooldown = Time.time + _cooldown;
     }
 }

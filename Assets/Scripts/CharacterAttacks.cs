@@ -19,15 +19,11 @@ public class CharacterAttacks : MonoBehaviour {
         }
 
         _castController.Cast(arrowAbility, () => {
-            try {
-                arrowAbility.ClaimCooldown();
+            arrowAbility.StartCooldown();
 
-                GameObject effectInstance = Instantiate(arrowAbility.Effect, target.position, default);
-                Effect effect = effectInstance.GetComponent<Effect>();
-                effect.Execute(transform);
-            } catch (Exception) {
-                // Oh well.
-            }
+            GameObject effectInstance = Instantiate(arrowAbility.Effect, target.position, default);
+            Effect effect = effectInstance.GetComponent<Effect>();
+            effect.Execute(transform);
         }, () => {
             AudioManager.Instance.PlaySound(_arrowCastStartSFX, transform.position);
         });
