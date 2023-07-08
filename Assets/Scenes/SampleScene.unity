@@ -7989,7 +7989,7 @@ MonoBehaviour:
   - {fileID: 1759162693}
   Player: {fileID: 1017035335}
   isGameOver: 0
-  skipIntro: 1
+  skipIntro: 0
   gameState: 0
   introDirector: {fileID: 0}
 --- !u!4 &1027611263
