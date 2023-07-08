@@ -50,6 +50,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MOVE_SPEED: 5
+  _onSpawnSFX: {fileID: 8300000, guid: da789595590965c4593fc48d353c005c, type: 3}
+  _onloopSFX: {fileID: 0}
+  _onHitSFX: {fileID: 8300000, guid: 0395ba8ab88439d45b44f09dd803a929, type: 3}
 --- !u!114 &8592674802835073797
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterAttacks : MonoBehaviour {
@@ -7,6 +5,9 @@ public class CharacterAttacks : MonoBehaviour {
 
     [SerializeField]
     private GameObject arrowPrefab;
+
+    [SerializeField]
+    private AudioClip _attackSound;
 
     [SerializeField]
     private float _cooldownDuration = 2f;
@@ -36,5 +37,7 @@ public class CharacterAttacks : MonoBehaviour {
         Projectile projectile = arrow.GetComponent<Projectile>();
 
         projectile.Setup(direction, _myStats);
+
+        AudioManager.Instance.PlaySound(_attackSound, transform.position);
     }
 }
