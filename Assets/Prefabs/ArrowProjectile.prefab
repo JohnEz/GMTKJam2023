@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7513650f04d2949bd5831290f909da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MOVE_SPEED: 10
+  MOVE_SPEED: 15
   _onSpawnSFX: {fileID: 8300000, guid: da789595590965c4593fc48d353c005c, type: 3}
   _onloopSFX: {fileID: 0}
   _onHitSFX: {fileID: 8300000, guid: 0395ba8ab88439d45b44f09dd803a929, type: 3}
