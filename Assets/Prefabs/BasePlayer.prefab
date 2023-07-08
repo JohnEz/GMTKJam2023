@@ -52,7 +52,7 @@ MonoBehaviour:
   - CastTime: 0.1
     _cooldown: 3
     _effect: {fileID: 1932630230815302502, guid: 318967ac3f0e2b546815c16fffa7561b, type: 3}
-  - CastTime: 1
+  - CastTime: 0.3
     _cooldown: 10
     _effect: {fileID: 1932630230815302502, guid: 6c4fec5f72c27924491639278c0032f1, type: 3}
 --- !u!114 &1994919731284332249
@@ -269,6 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _defaultControlSchemeProvider: {fileID: 6624380998386228755, guid: 436eb28a6cab21c4897c2ced2c8be2a5, type: 3}
+  ControlsEnabled: 1
 --- !u!58 &5851023122615115648
 CircleCollider2D:
   m_ObjectHideFlags: 0
