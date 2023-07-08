@@ -458,78 +458,6 @@ MonoBehaviour:
   damageBar: {fileID: 1917711537}
   nameText: {fileID: 222863728}
   _myStats: {fileID: 1017035335}
---- !u!1 &398789432 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1857535088}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &495052425 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1857535088}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398789432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &495052434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398789432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 7e2ccb124a9328249bdba451784a7b35, type: 2}
-    - {fileID: 11400000, guid: 4be424113ef1bd94dad4b19472cfa81a, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 495052435}
-          m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
-          m_MethodName: MoveIntoScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 495052435}
-          m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
-          m_MethodName: SetupIntro
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &495052435 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3467480784603131222, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1857535088}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 398789432}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65faf43b99d34854ea7b3df88e0bc678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &502867435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -836,6 +764,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &703837092 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+  m_PrefabInstance: {fileID: 1857535088}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &787500299
 GameObject:
   m_ObjectHideFlags: 0
@@ -7985,8 +7924,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Adventurers:
-  - {fileID: 495052425}
-  - {fileID: 1759162693}
+  - {fileID: 703837092}
+  - {fileID: 1661339855}
   Player: {fileID: 1017035335}
   isGameOver: 0
   skipIntro: 0
@@ -8070,9 +8009,9 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 7676885578866855287, guid: 78f3c668e207916418346e298c21b00c, type: 2}
-    value: {fileID: 495052434}
+    value: {fileID: 0}
   - key: {fileID: -8932588519672654934, guid: 78f3c668e207916418346e298c21b00c, type: 2}
-    value: {fileID: 1759162703}
+    value: {fileID: 0}
   - key: {fileID: 6943429750200237158, guid: 78f3c668e207916418346e298c21b00c, type: 2}
     value: {fileID: 1027611264}
   m_ExposedReferences:
@@ -8092,11 +8031,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1128076783 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1493743814}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1167242852
 GameObject:
   m_ObjectHideFlags: 0
@@ -12412,6 +12346,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1017035331}
+    - target: {fileID: 1972687277764725996, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
       value: BaseEnemy (1)
@@ -12490,6 +12428,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+--- !u!114 &1661339855 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+  m_PrefabInstance: {fileID: 1493743814}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1692892633
 GameObject:
   m_ObjectHideFlags: 0
@@ -12640,73 +12589,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1759162693 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1493743814}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128076783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2aaac3420d9788845b0b6e5efcdfbb23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1759162694 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3467480784603131222, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
-  m_PrefabInstance: {fileID: 1493743814}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128076783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65faf43b99d34854ea7b3df88e0bc678, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1759162703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1128076783}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 4be424113ef1bd94dad4b19472cfa81a, type: 2}
-    - {fileID: 11400000, guid: 7e2ccb124a9328249bdba451784a7b35, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1759162694}
-          m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
-          m_MethodName: SetupIntro
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1759162694}
-          m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
-          m_MethodName: MoveIntoScene
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1806591102
 GameObject:
   m_ObjectHideFlags: 0
@@ -25315,6 +25197,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1017035331}
+    - target: {fileID: 1972687277764725996, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
       value: BaseEnemy
