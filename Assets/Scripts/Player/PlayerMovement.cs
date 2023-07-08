@@ -2,15 +2,15 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class PlayerMovement : MonoBehaviour {
-    private ControlScheme _controlScheme;
+    private PlayerControls _playerControls;
 
     private CharacterMovement _characterMovement;
 
     void Awake() {
-        _controlScheme = GetComponent<ControlScheme>();
+        _playerControls = GetComponent<PlayerControls>();
         _characterMovement = GetComponent<CharacterMovement>();
 
-        if (!_controlScheme) {
+        if (!_playerControls) {
             Debug.Log("PlayerMovement: No control scheme found on player!");
         }
     }
@@ -21,19 +21,19 @@ public class PlayerMovement : MonoBehaviour {
 
     private Vector3 MoveDirection {
         get {
-            Vector3 yDirection = _controlScheme.MoveUp
-                ? _controlScheme.MoveDown
+            Vector3 yDirection = _playerControls.MoveUp
+                ? _playerControls.MoveDown
                 ? default
                 : Vector3.up
-                : _controlScheme.MoveDown
+                : _playerControls.MoveDown
                 ? Vector3.down
                 : default;
 
-            Vector3 xDirection = _controlScheme.MoveLeft
-                ? _controlScheme.MoveRight
+            Vector3 xDirection = _playerControls.MoveLeft
+                ? _playerControls.MoveRight
                 ? default
                 : Vector3.left
-                : _controlScheme.MoveRight
+                : _playerControls.MoveRight
                 ? Vector3.right
                 : default;
 

@@ -1,19 +1,19 @@
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour {
-    private ControlScheme _controlScheme;
+    private PlayerControls _playerControls;
 
     public void Awake() {
-        _controlScheme = GetComponent<ControlScheme>();
+        _playerControls = GetComponent<PlayerControls>();
     }
 
     void Update() {
-        if (_controlScheme.Ability1) {
+        if (_playerControls.Ability1) {
             Debug.Log("ABILITY ONE AT ");
-            Debug.Log(_controlScheme.TargetPosition);
-        } else if (_controlScheme.Ability2) {
+            Debug.Log(_playerControls.TargetPosition);
+        } else if (_playerControls.Ability2) {
             Debug.Log("ABILITY TWO AT ");
-            Debug.Log(_controlScheme.TargetPosition);
+            Debug.Log(_playerControls.TargetPosition);
         }
     }
 }

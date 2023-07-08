@@ -1,19 +1,19 @@
 using UnityEngine;
 
-public class KeyboardAndMouseControls : ControlScheme {
+public class KeyboardAndMouseControls : MonoBehaviour, ControlScheme {
     public KeyBindings _keyBindings;
 
-    public override bool MoveUp => Input.GetKey(_keyBindings.MoveUp);
+    public bool MoveUp => Input.GetKey(_keyBindings.MoveUp);
 
-    public override bool MoveDown => Input.GetKey(_keyBindings.MoveDown);
+    public bool MoveDown => Input.GetKey(_keyBindings.MoveDown);
 
-    public override bool MoveLeft => Input.GetKey(_keyBindings.MoveLeft);
+    public bool MoveLeft => Input.GetKey(_keyBindings.MoveLeft);
 
-    public override bool MoveRight => Input.GetKey(_keyBindings.MoveRight);
+    public bool MoveRight => Input.GetKey(_keyBindings.MoveRight);
 
-    public override bool Ability1 => Input.GetKey(_keyBindings.Ability1);
+    public bool Ability1 => Input.GetKey(_keyBindings.Ability1);
 
-    public override bool Ability2 => Input.GetKey(_keyBindings.Ability2);
+    public bool Ability2 => Input.GetKey(_keyBindings.Ability2);
 
-    public override Vector3 TargetPosition => Input.mousePosition;
+    public Vector3 TargetPosition => Input.mousePosition;
 }
