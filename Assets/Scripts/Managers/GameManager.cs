@@ -2,12 +2,37 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : Singleton<GameManager> {
+
     public List<CharacterStats> Adventurers;
 
     public CharacterStats Player;
 
     public bool isGameOver = false;
+
+    public enum GameState {Intro, Cutscene, Combat, GameOver};
+    public GameState gameState = GameState.Intro;
+
+    public void transitionGameState(GameState newState) {
+        switch(newState) {
+            case GameState.Intro:
+            // Play intro
+            break;
+            case GameState.Cutscene:
+            // Play cutscene
+            break;
+            case GameState.Combat:
+            // Allow player and enemy movement
+            break;
+            case GameState.GameOver:
+            // Display end screen
+            break;
+        }
+    }
+
+    public bool isGameActive() {
+        return this.gameState == GameState.Combat;
+    }
 
     private void Awake() {
         Adventurers.ForEach((adventurer) => {

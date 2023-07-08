@@ -43,9 +43,12 @@ public class CharacterController : MonoBehaviour {
     }
 
     public void Update() {
-        if (_myStats.IsDead) {
+        if (_myStats.IsDead || !GameManager.Instance.isGameActive()) {
+            GetComponent<CircleCollider2D>().enabled = false;
             return;
         }
+
+        GetComponent<CircleCollider2D>().enabled = true;
 
         CalculateRandomAction();
         MovementLogic();

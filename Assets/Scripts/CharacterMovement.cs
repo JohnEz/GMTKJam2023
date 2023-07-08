@@ -23,7 +23,7 @@ public class CharacterMovement : MonoBehaviour {
 
         Vector2 moveDirection = MoveDirection;
 
-        Vector3 newPosition = _body.position + (moveDirection * _playerStats.MoveSpeed) * Time.fixedDeltaTime;
+        Vector3 newPosition = _body.position + (moveDirection.normalized * _playerStats.MoveSpeed) * Time.fixedDeltaTime;
 
         _body.MovePosition(newPosition);
     }
