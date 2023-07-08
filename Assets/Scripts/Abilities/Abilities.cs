@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Abilities : MonoBehaviour {
+
     [SerializeField]
     private List<Ability> _abilities;
 
@@ -15,11 +16,13 @@ public class Abilities : MonoBehaviour {
     public void TryExecute(int index, Vector3 targetPosition) {
         Ability ability = GetAbility(index);
         if (ability == null) {
-            throw new Exception("Abilities: Invalid ability specified to execute!");
+            //throw new Exception("Abilities: Invalid ability specified to execute!");
+            return;
         }
 
         if (_castController.IsCasting) {
-            throw new Exception("Abilities: Attempt to execute ability while casting!");
+            //throw new Exception("Abilities: Attempt to execute ability while casting!");
+            return;
         }
 
         _castController.Cast(ability, () => {
