@@ -9,7 +9,9 @@ public class PlayerControls : MonoBehaviour, ControlScheme {
 
     private ControlScheme _controlScheme;
 
-    public bool ControlsEnabled = true;
+    private CharacterStats _characterStats;
+
+    public bool ControlsEnabled => GameManager.Instance.IsGameActive() && !_characterStats.IsDead;
 
     public bool MoveUp => ControlsEnabled && _controlScheme.MoveUp;
 
@@ -28,6 +30,8 @@ public class PlayerControls : MonoBehaviour, ControlScheme {
     public Vector3 TargetPosition => _controlScheme.TargetPosition;
 
     public void Awake() {
+        _characterStats = GetComponent<CharacterStats>();
+
         SetControlScheme(_defaultControlSchemeProvider);
     }
 
