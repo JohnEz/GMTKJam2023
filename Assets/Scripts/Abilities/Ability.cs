@@ -17,6 +17,8 @@ public class Ability {
 
     private bool _isCoolingDown => _timeOffCooldown > Time.time;
 
+    public bool IsCoolingDown { get => _isCoolingDown; }
+
     public void ClaimCooldown() {
         if (_isCoolingDown) {
             throw new Exception("Ability on cooldown!");

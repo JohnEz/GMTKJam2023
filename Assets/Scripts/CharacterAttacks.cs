@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CharacterAttacks : MonoBehaviour {
@@ -5,18 +6,7 @@ public class CharacterAttacks : MonoBehaviour {
     private CastController _castController;
 
     [SerializeField]
-    private AudioClip arrowCastSFX;
-
-    [SerializeField]
-    private GameObject arrowPrefab;
-
-    [SerializeField]
-    private AudioClip _attackSound;
-
-    [SerializeField]
-    private float _cooldownDuration = 2f;
-
-    private float _timeOffCooldown = 0;
+    private AudioClip _arrowCastStartSFX;
 
     public Ability arrowAbility;
 
@@ -26,29 +16,22 @@ public class CharacterAttacks : MonoBehaviour {
     }
 
     public void Attack(Transform target) {
-        if (IsAttackOnCooldown() || _castController.IsCasting) {
+        if (arrowAbility.IsCoolingDown || _castController.IsCasting) {
             return;
         }
 
         _castController.Cast(arrowAbility, () => {
-            _timeOffCooldown = Time.time + _cooldownDuration;
-            FireArrow(target.position - transform.position);
+            try {
+                arrowAbility.ClaimCooldown();
+
+                GameObject effectInstance = Instantiate(arrowAbility.Effect, target.position, default);
+                Effect effect = effectInstance.GetComponent<Effect>();
+                effect.Execute(_myStats);
+            } catch (Exception) {
+                // Oh well.
+            }
         }, () => {
-            AudioManager.Instance.PlaySound(arrowCastSFX, transform);
+            AudioManager.Instance.PlaySound(_arrowCastStartSFX, transform.position);
         });
-    }
-
-    private bool IsAttackOnCooldown() {
-        return _timeOffCooldown > Time.time;
-    }
-
-    private void FireArrow(Vector3 direction) {
-        GameObject arrow = Instantiate(arrowPrefab);
-        arrow.transform.position = transform.position;
-        Projectile projectile = arrow.GetComponent<Projectile>();
-
-        projectile.Setup(direction, _myStats);
-
-        AudioManager.Instance.PlaySound(_attackSound, transform.position);
     }
 }

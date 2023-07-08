@@ -94,14 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611af93a610ec074aa156d9e64ba8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowCastSFX: {fileID: 8300000, guid: 7833dc7f8375e9044b3b25b7fa546070, type: 3}
-  arrowPrefab: {fileID: 493542880508337329, guid: b71effe51d80a3b49a96f3fe1b691e06, type: 3}
-  _attackSound: {fileID: 0}
-  _cooldownDuration: 2
+  _arrowCastStartSFX: {fileID: 8300000, guid: 7833dc7f8375e9044b3b25b7fa546070, type: 3}
   arrowAbility:
     CastTime: 0.4
     _cooldown: 2
-    _effect: {fileID: 0}
+    _effect: {fileID: 1932630230815302502, guid: a7feb998940bb6b4b9a56e179b79ce2d, type: 3}
 --- !u!114 &1924203386141499780
 MonoBehaviour:
   m_ObjectHideFlags: 0
