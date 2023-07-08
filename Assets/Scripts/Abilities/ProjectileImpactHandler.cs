@@ -16,6 +16,8 @@ public class ProjectileImpactHandler : MonoBehaviour {
     public void OnImpact() {
         _collider.enabled = true;
 
+        CameraManager.Instance.ShakeCamera(2.5f, .2f);
+
         StartCoroutine(DisableCollision());
     }
 
