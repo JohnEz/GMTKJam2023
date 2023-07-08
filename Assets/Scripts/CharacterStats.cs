@@ -2,33 +2,44 @@ using System;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
+    public string Name = "Unknown";
+
     public float MoveSpeed;
 
     [SerializeField]
-    private float _maxHealth;
+    private int _maxHealth = 100;
 
     [HideInInspector]
-    public float MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
+    public int MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
 
-    private float _currentHealth;
+    private int _currentHealth;
 
     [HideInInspector]
-    public float CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
+    public int CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
 
     public Action OnHealthChanged;
 
     private void Awake() {
+        CurrentHealth = MaxHealth;
     }
 
-    private void SetCurrentHealth(float value) {
-        _currentHealth = value;
+    private void SetCurrentHealth(int value) {
+        _currentHealth = Math.Clamp(value, 0, _maxHealth);
 
         OnHealthChanged?.Invoke();
     }
 
-    private void SetMaxHealth(float value) {
+    private void SetMaxHealth(int value) {
         _maxHealth = value;
 
+        if (_maxHealth < _currentHealth) {
+            _currentHealth = _maxHealth;
+        }
+
         OnHealthChanged?.Invoke();
+    }
+
+    public void TakeDamage(int damage) {
+        CurrentHealth -= damage;
     }
 }

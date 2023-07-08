@@ -8,7 +8,11 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private float MOVE_SPEED = 20f;
 
-    public void Setup(Vector3 direction) {
+    private CharacterStats _caster;
+
+    public void Setup(Vector3 direction, CharacterStats caster) {
+        _caster = caster;
+
         Direction = direction;
 
         float angle = Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg;
@@ -23,6 +27,11 @@ public class Projectile : MonoBehaviour {
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
-        Destroy(gameObject);
+        CharacterStats hitCharacter = collision.gameObject.GetComponent<CharacterStats>();
+
+        if (hitCharacter && hitCharacter != _caster) {
+            hitCharacter.TakeDamage(10);
+            Destroy(gameObject);
+        }
     }
 }

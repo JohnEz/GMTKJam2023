@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterAttacks : MonoBehaviour {
+    private CharacterStats _myStats;
 
     [SerializeField]
     private GameObject arrowPrefab;
@@ -11,6 +12,10 @@ public class CharacterAttacks : MonoBehaviour {
     private float _cooldownDuration = 2f;
 
     private float _timeOffCooldown = 0;
+
+    private void Awake() {
+        _myStats = GetComponent<CharacterStats>();
+    }
 
     public void Attack(Transform target) {
         if (IsAttackOnCooldown()) {
@@ -30,6 +35,6 @@ public class CharacterAttacks : MonoBehaviour {
         arrow.transform.position = transform.position;
         Projectile projectile = arrow.GetComponent<Projectile>();
 
-        projectile.Setup(direction);
+        projectile.Setup(direction, _myStats);
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HealthBarController : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class HealthBarController : MonoBehaviour {
 
     [SerializeField]
     private Image damageBar;
+
+    [SerializeField]
+    private TMP_Text nameText;
 
     private const float DAMAGE_BAR_SHRINK_TIMER_MAX = 0.3f;
     private const float BAR_SHRINK_SPEED = 5f;
@@ -22,6 +26,10 @@ public class HealthBarController : MonoBehaviour {
 
     private void Awake() {
         SetHp();
+
+        if (nameText) {
+            nameText.text = _myStats.Name;
+        }
     }
 
     public void OnEnable() {
