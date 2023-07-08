@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611af93a610ec074aa156d9e64ba8aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _arrowCastStartSFX: {fileID: 8300000, guid: 7833dc7f8375e9044b3b25b7fa546070, type: 3}
+  _arrowCastStartSFX: {fileID: 8300000, guid: c7603db6e524df94aa819f46f1626036, type: 3}
   arrowAbility:
     CastTime: 0.4
     _cooldown: 2
