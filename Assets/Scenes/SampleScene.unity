@@ -373,9 +373,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 490ed0bd22bbd5448b1b88ff90f47387, type: 2}
     - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+      propertyPath: _abilities.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
       propertyPath: _abilities.Array.data[0]._effect
       value: 
       objectReference: {fileID: 1932630230815302502, guid: 577e01237996d4141abd03972de0eeb5, type: 3}
+    - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+      propertyPath: _abilities.Array.data[0].CastTime
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
       propertyPath: _abilities.Array.data[0]._cooldown
       value: 2
