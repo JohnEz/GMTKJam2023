@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8807161263453819340}
   - component: {fileID: 88324679391341684}
+  - component: {fileID: 6490187757040367964}
   m_Layer: 0
   m_Name: TentacleSlam
   m_TagString: Untagged
@@ -45,12 +46,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7513650f04d2949bd5831290f909da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
   MOVE_SPEED: 0
   _onSpawnSFX: {fileID: 0}
   _onloopSFX: {fileID: 0}
   _onHitSFX: {fileID: 0}
   _destroyOnImpact: 0
+--- !u!114 &6490187757040367964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853510841736880380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6f6055518272ff4b947e34a1022daba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifespan: 8
 --- !u!1 &4298949271288497439
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,7 +73,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8239579158373001447}
-  - component: {fileID: 5354451213064811179}
   - component: {fileID: 6922812127826504021}
   - component: {fileID: 258627281397715847}
   - component: {fileID: 1808695485335238029}
@@ -88,19 +100,6 @@ Transform:
   m_Father: {fileID: 5331123910341221695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5354451213064811179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4298949271288497439}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f6055518272ff4b947e34a1022daba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifespan: 8
 --- !u!61 &6922812127826504021
 BoxCollider2D:
   m_ObjectHideFlags: 0
