@@ -12,9 +12,14 @@ public class Beam : MonoBehaviour {
     [SerializeField]
     private float _duration = 1.5f;
 
+    private float _fadeOutTimer = .5f;
+
     private bool _isActive = false;
 
     private float _tickRate = .1f;
+
+    [SerializeField]
+    private Animator _animator;
 
     private void Awake() {
         _targets = new Dictionary<Damagable, BurnTicker>();
@@ -32,13 +37,20 @@ public class Beam : MonoBehaviour {
 
         _isActive = true;
 
-        CameraManager.Instance.ShakeCamera(5, _duration);
+        CameraManager.Instance.ShakeCamera(5, _duration + (_fadeOutTimer / 2));
 
-        //TEMP
-        Destroy(gameObject, _duration);
+        Invoke("FadeOutBeam", _duration);
     }
 
     private void FaceMouse() {
+    }
+
+    private void FadeOutBeam() {
+        _isActive = false;
+
+        _animator?.SetTrigger("fadeOut");
+
+        Destroy(gameObject, _fadeOutTimer);
     }
 
     private void Update() {
