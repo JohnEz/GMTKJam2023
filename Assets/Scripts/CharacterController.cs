@@ -38,6 +38,8 @@ public class CharacterController : MonoBehaviour {
         _myStats = GetComponent<CharacterStats>();
 
         _myStats.OnDeath += HandleDeath;
+
+        ChangeRange();
     }
 
     public void Update() {
