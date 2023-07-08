@@ -17,14 +17,25 @@ public class CharacterStats : MonoBehaviour {
     [HideInInspector]
     public int CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
 
+    private bool _isDead;
+
+    public bool IsDead { get => _isDead; }
+
     public Action OnHealthChanged;
+
+    public Action OnDeath;
 
     private void Awake() {
         CurrentHealth = MaxHealth;
     }
 
     private void SetCurrentHealth(int value) {
-        _currentHealth = Math.Clamp(value, 0, _maxHealth);
+        _currentHealth = Math.Clamp(value, 0, _isDead ? 0 : _maxHealth);
+
+        if (!_isDead && _currentHealth <= 0) {
+            _isDead = true;
+            OnDeath?.Invoke();
+        }
 
         OnHealthChanged?.Invoke();
     }

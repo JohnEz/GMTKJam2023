@@ -18,6 +18,10 @@ public class CharacterController : MonoBehaviour {
 
     private CharacterMovement _movement;
     private CharacterAttacks _attacks;
+    private CharacterStats _myStats;
+
+    [SerializeField]
+    private Animator _animator;
 
     private float ROTATION_DURATION = 5f;
     private float ROTATION_DURATION_RANDOM = .2f;
@@ -28,15 +32,27 @@ public class CharacterController : MonoBehaviour {
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
         _attacks = GetComponent<CharacterAttacks>();
+        _myStats = GetComponent<CharacterStats>();
+
+        _myStats.OnDeath += HandleDeath;
     }
 
     public void Update() {
+        if (_myStats.IsDead) {
+            return;
+        }
+
         CalculateRotationSwitch();
         MovementLogic();
         AimingLogic();
 
         // temp
         _attacks.Attack(target);
+    }
+
+    private void HandleDeath() {
+        _movement.MoveDirection = Vector3.zero;
+        _animator.SetTrigger("onDeath");
     }
 
     private void CalculateRotationSwitch() {

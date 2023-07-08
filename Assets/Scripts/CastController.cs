@@ -10,6 +10,10 @@ internal struct CastingAbility {
 }
 
 public class CastController : MonoBehaviour {
+
+    [SerializeField]
+    private CharacterStats _myStats;
+
     public bool IsCasting = false;
 
     private Ability _castingAbility;
@@ -26,8 +30,18 @@ public class CastController : MonoBehaviour {
 
     private CastingAbility _abilityToCast;
 
+    public void Awake() {
+        _myStats.OnDeath += HandleDeath;
+    }
+
+    public void HandleDeath() {
+        if (_castRequest) {
+            CastFail();
+        }
+    }
+
     public bool Cast(Ability ability, Action onCastComplete, Action onCastStart = null) {
-        if (IsCasting) {
+        if (IsCasting || _myStats.IsDead) {
             return false;
         }
 

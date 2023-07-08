@@ -32,8 +32,6 @@ public class DamageFlash : MonoBehaviour {
     }
 
     public void StartFlash() {
-        //_damageFlashCoroutine = StartCoroutine(DamageFlash());
-
         SetFlashColor();
 
         DOVirtual.Float(0, 1, _flashTime, value => SetFlashAmount(value)).SetEase(_flashCurve);

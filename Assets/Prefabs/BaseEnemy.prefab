@@ -54,6 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   _weaponAnchor: {fileID: 6490498890921624425}
+  _animator: {fileID: 8563483024510816505}
 --- !u!114 &1923494030384655132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +69,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Unknown
   MoveSpeed: 4
-  _maxHealth: 100
+  _maxHealth: 50
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33e2a9d11ab6c341b3fa735c0f2e769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myStats: {fileID: 1923494030384655132}
   IsCasting: 0
   OnCastStart:
     m_PersistentCalls:

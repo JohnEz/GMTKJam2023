@@ -58,6 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a33e2a9d11ab6c341b3fa735c0f2e769, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _myStats: {fileID: 3231708863265726656}
   IsCasting: 0
   OnCastStart:
     m_PersistentCalls:
@@ -221,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _myAnimator: {fileID: 2160619530682072454}
-  _playerStats: {fileID: 0}
+  _playerStats: {fileID: 3231708863265726656}
 --- !u!114 &3385782594662327004
 MonoBehaviour:
   m_ObjectHideFlags: 0
