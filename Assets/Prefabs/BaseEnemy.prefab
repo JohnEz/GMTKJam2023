@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1276784477387354522}
   - component: {fileID: 7948593720473592109}
   - component: {fileID: 3467480784603131222}
+  - component: {fileID: 5243450281337384557}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -192,6 +193,21 @@ MonoBehaviour:
   startingPath: []
   startingPosition: {x: 0, y: 0, z: 0}
   targetPositionTolerance: 0.5
+--- !u!114 &5243450281337384557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444906719881861685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals: []
+    m_Events: []
 --- !u!1 &4018464515222320817
 GameObject:
   m_ObjectHideFlags: 0
