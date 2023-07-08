@@ -43,7 +43,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     public void Update() {
-        if (_myStats.IsDead || !GameManager.Instance.isGameActive()) {
+        if (_myStats.IsDead || !GameManager.Instance.IsGameActive()) {
             GetComponent<CircleCollider2D>().enabled = false;
             return;
         }

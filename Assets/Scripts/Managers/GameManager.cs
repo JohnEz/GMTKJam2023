@@ -13,7 +13,11 @@ public class GameManager : Singleton<GameManager> {
     public enum GameState {Intro, Cutscene, Combat, GameOver};
     public GameState gameState = GameState.Intro;
 
-    public void transitionGameState(GameState newState) {
+    public void EndIntro() {
+        TransitionGameState(GameState.Combat);
+    }
+
+    public void TransitionGameState(GameState newState) {
         switch(newState) {
             case GameState.Intro:
             // Play intro
@@ -22,6 +26,7 @@ public class GameManager : Singleton<GameManager> {
             // Play cutscene
             break;
             case GameState.Combat:
+                gameState = GameState.Combat;
             // Allow player and enemy movement
             break;
             case GameState.GameOver:
@@ -30,7 +35,7 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    public bool isGameActive() {
+    public bool IsGameActive() {
         return this.gameState == GameState.Combat;
     }
 
