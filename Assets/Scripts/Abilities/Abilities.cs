@@ -6,6 +6,12 @@ public class Abilities : MonoBehaviour {
     [SerializeField]
     private List<Ability> _abilities;
 
+    private CharacterStats _characterStats;
+
+    public void Awake() {
+        _characterStats = GetComponentInParent<CharacterStats>();
+    }
+
     public void TryExecute(int index, Vector3 targetPosition) {
         Ability ability = GetAbility(index);
         if (ability == null) {
@@ -14,7 +20,10 @@ public class Abilities : MonoBehaviour {
 
         try {
             ability.ClaimCooldown();
-            Instantiate(ability.Effect, targetPosition, default);
+
+            GameObject effectInstance = Instantiate(ability.Effect, targetPosition, default);
+            Effect effect = effectInstance.GetComponent<Effect>();
+            effect.Execute(_characterStats);
         } catch (Exception) {
             // Oh well.
         }
