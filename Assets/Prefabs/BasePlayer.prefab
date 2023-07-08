@@ -459,6 +459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_tentacles_right_front
       objectReference: {fileID: 0}
+    - target: {fileID: 3906560035851934282, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 3906560035851934283, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -520,6 +524,10 @@ PrefabInstance:
     - target: {fileID: 3906560035851934280, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_Name
       value: Boss_tentacles_right_rear
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906560035851934282, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 3906560035851934283, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_RootOrder
@@ -583,6 +591,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss_tentacles_left_rear
       objectReference: {fileID: 0}
+    - target: {fileID: 3906560035851934282, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -2
+      objectReference: {fileID: 0}
     - target: {fileID: 3906560035851934283, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -644,6 +656,10 @@ PrefabInstance:
     - target: {fileID: 3906560035851934280, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_Name
       value: Boss_tentacles_left_front
+      objectReference: {fileID: 0}
+    - target: {fileID: 3906560035851934282, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3906560035851934283, guid: 5ab8389f55b43f54c8aec26a90ab5af8, type: 3}
       propertyPath: m_RootOrder
