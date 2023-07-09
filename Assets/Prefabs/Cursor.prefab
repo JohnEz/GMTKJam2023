@@ -490,6 +490,39 @@ MonoBehaviour:
   rightClickBar: {fileID: 1908827334404674252}
   spacebarBar: {fileID: 2690955598251480325}
   abilities: {fileID: 0}
+  pulseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 2
+      outSlope: 0.40065366
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.49709865
+      value: 1.1991644
+      inSlope: 0.0036510078
+      outSlope: -0.004005078
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.30400515
+      outWeight: 0.27929717
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.39603075
+      outSlope: 0
+      tangentMode: 69
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!225 &4296425032706105256
 CanvasGroup:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class Crosshair : MonoBehaviour {
 
@@ -16,6 +17,9 @@ public class Crosshair : MonoBehaviour {
 
     [SerializeField]
     private Abilities abilities;
+
+    [SerializeField]
+    private AnimationCurve pulseCurve;
 
     private void Awake() {
         leftClickBar.fillAmount = 0;
@@ -39,6 +43,25 @@ public class Crosshair : MonoBehaviour {
         if (abilities.AbilitiesList[2] != null) {
             spacebarBar.fillAmount = CalculateBarFill(abilities.AbilitiesList[2]);
         }
+
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            Pulse();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Mouse1)) {
+            Pulse();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Pulse();
+        }
+    }
+
+    private void Pulse() {
+        Sequence sequence = DOTween.Sequence();
+
+        sequence.Join(transform.DOScale(new Vector3(80f, 80f, 80f), .15f));
+        sequence.Join(transform.DOScale(new Vector3(24f, 24f, 24f), .15f));
     }
 
     private void FollowMouse() {
