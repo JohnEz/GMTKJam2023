@@ -28,10 +28,6 @@ public class HealthBarController : MonoBehaviour {
     private void Awake() {
         SetHp();
         UpdateHealthBar(0);
-
-        if (nameText) {
-            nameText.text = _myStats.Name;
-        }
     }
 
     public void OnEnable() {
