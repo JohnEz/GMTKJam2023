@@ -299,7 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Big Bad Enemy Crab
   MoveSpeed: 4
-  _healthBars: 3200000090010000
+  _healthBars: c800000090010000
   faction: 2
   _onDeathSFX: {fileID: 8300000, guid: 277c0ccb884789a479e67d1b928ff206, type: 3}
 --- !u!114 &1276620086668443503

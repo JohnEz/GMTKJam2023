@@ -21636,7 +21636,7 @@ MonoBehaviour:
   - {fileID: 1138893359}
   - {fileID: 1448301327}
   Player: {fileID: 1017035335}
-  skipIntro: 0
+  skipIntro: 1
   gameState: 0
   introDirector: {fileID: 1035367921}
   interludeDirector: {fileID: 1205073328}
