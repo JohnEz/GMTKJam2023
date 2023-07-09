@@ -30,6 +30,7 @@ public class CharacterCutscene : MonoBehaviour {
 
     public void PlayNextDialog() {
         DisplayChatBubble(introDialog[introDialogPointer]);
+        introDialogPointer++;
     }
 
     public void HideChatBubble() {
