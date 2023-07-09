@@ -13,6 +13,7 @@ public class LavaController : MonoBehaviour {
     [SerializeField]
     private float _tickRate = .3f;
 
+    [SerializeField]
     private AudioClip _burnSFX;
 
     private void Awake() {
