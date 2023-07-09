@@ -219,8 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Big Bad Enemy Crab
   MoveSpeed: 4
-  _maxHealth: 100
-  _numHealthBars: 2
+  _healthBars: 2800000046000000
 --- !u!114 &1276620086668443503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashHealColor: {r: 0, g: 1, b: 0, a: 1}
   _flashTime: 0.125
   _flashCurve:
     serializedVersion: 2
