@@ -49,7 +49,7 @@ MonoBehaviour:
   MOVE_SPEED: 0
   _onSpawnSFX: {fileID: 0}
   _onloopSFX: {fileID: 0}
-  _onHitSFX: {fileID: 8300000, guid: cf816bdc687a6fb4eb3597db3f098e52, type: 3}
+  _onHitSFX: {fileID: 0}
   _destroyOnImpact: 0
   _missEffects: {fileID: 0}
   _impactEffects: {fileID: 1932630230815302502, guid: 53dfd5d420d1f864ea153f6b978559ae, type: 3}
@@ -185,6 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddb78691b0ba5a48bc89e298e631c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _impactSFX: {fileID: 8300000, guid: cf816bdc687a6fb4eb3597db3f098e52, type: 3}
+  _shiftPitch: 1
 --- !u!1 &5022802241619442146
 GameObject:
   m_ObjectHideFlags: 0
