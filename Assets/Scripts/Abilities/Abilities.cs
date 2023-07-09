@@ -16,11 +16,7 @@ public class Abilities : MonoBehaviour {
 
     public void TryExecute(int index, Vector3 targetPosition) {
         Ability ability = GetAbility(index);
-        if (ability == null) {
-            return;
-        }
-
-        if (_castController.IsCasting || ability.IsCoolingDown) {
+        if (ability == null || !ability.Enabled || _castController.IsCasting || ability.IsCoolingDown) {
             return;
         }
 
@@ -33,6 +29,12 @@ public class Abilities : MonoBehaviour {
         }, null);
 
         return;
+    }
+
+    public void EnableAbility(int index) {
+        if (index <= _abilities.Count) {
+            _abilities[index].Enabled = true;
+        }
     }
 
     private Ability GetAbility(int index) {

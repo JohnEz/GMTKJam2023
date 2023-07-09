@@ -46,13 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _abilities:
-  - CastTime: 0
+  - _enabled: 1
+    CastTime: 0
     _cooldown: 1
     _effects: {fileID: 0}
-  - CastTime: 0.1
+  - _enabled: 1
+    CastTime: 0.1
     _cooldown: 3
     _effects: {fileID: 0}
-  - CastTime: 0.3
+  - _enabled: 0
+    CastTime: 0.3
     _cooldown: 10
     _effects: {fileID: 0}
 --- !u!114 &1994919731284332249

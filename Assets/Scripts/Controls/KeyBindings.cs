@@ -12,7 +12,7 @@ public class KeyBindings : ScriptableObject {
 
     public int Ability1;
 
-    public KeyCode Ability2;
+    public int Ability2;
 
-    public int Ability3;
+    public KeyCode Ability3;
 }
