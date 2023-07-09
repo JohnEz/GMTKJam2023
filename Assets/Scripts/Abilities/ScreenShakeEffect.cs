@@ -8,9 +8,6 @@ public class ScreenShakeEffect : Effect {
     private float _time = .2f;
 
     protected override void RunEffect(Transform origin) {
-        Debug.Log("SCREEN SHAKE");
-        Debug.Log(_intensity);
-        Debug.Log(_time);
         CameraManager.Instance.ShakeCamera(_intensity, _time);
     }
 }

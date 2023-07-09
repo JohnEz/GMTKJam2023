@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class ChatBubbleController : MonoBehaviour
-{
+public class ChatBubbleController : MonoBehaviour {
     private SpriteRenderer _backgroundSpriteRenderer;
     private TextMeshPro _textMeshPro;
 
@@ -22,7 +21,6 @@ public class ChatBubbleController : MonoBehaviour
         _textMeshPro.SetText(text);
         _textMeshPro.ForceMeshUpdate();
         Vector2 textSize = _textMeshPro.GetRenderedValues(false);
-        Debug.Log(textSize);
         _backgroundSpriteRenderer.size = textSize + padding;
 
         _backgroundSpriteRenderer.transform.localPosition = new Vector3(_backgroundSpriteRenderer.size.x / 2f - padding.x / 2, yAdjust);

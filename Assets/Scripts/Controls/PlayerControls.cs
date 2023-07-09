@@ -11,7 +11,7 @@ public class PlayerControls : MonoBehaviour, ControlScheme {
 
     private CharacterStats _characterStats;
 
-    public bool ControlsEnabled => GameManager.Instance.IsGameActive() && !_characterStats.IsDead;
+    public bool ControlsEnabled => GameManager.Instance.IsGameActive && !_characterStats.IsDead;
 
     public bool MoveUp => ControlsEnabled && _controlScheme.MoveUp;
 
