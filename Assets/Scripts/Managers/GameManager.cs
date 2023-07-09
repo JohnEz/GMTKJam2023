@@ -5,12 +5,17 @@ using UnityEngine.Playables;
 [RequireComponent(typeof(SceneChanger))]
 [RequireComponent(typeof(Quit))]
 public class GameManager : Singleton<GameManager> {
-
     public List<CharacterStats> Adventurers;
 
     public CharacterStats Player;
 
     public bool skipIntro = false;
+
+    [SerializeField]
+    private AudioClip _onDefeatSFX;
+
+    [SerializeField]
+    private AudioClip _onVictorySFX;
 
     public enum GameState {
         Intro,
@@ -56,24 +61,30 @@ public class GameManager : Singleton<GameManager> {
             case GameState.Intro:
                 // Play intro
                 break;
+
             case GameState.Cutscene:
                 // Play cutscene
                 break;
+
             case GameState.Combat:
                 StartCombat();
                 break;
+
             case GameState.PhaseInterlude:
                 StopCombat();
                 interludeDirector.GetComponent<PlayableDirector>().Play();
                 break;
+
             case GameState.Victory:
                 StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
                 break;
+
             case GameState.Defeat:
                 StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Victory!", "The world is safe again, for now...", "Replay");
                 break;
+
             case GameState.MutualDestruction:
                 StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
@@ -127,9 +138,13 @@ public class GameManager : Singleton<GameManager> {
                 TransitionGameState(GameState.MutualDestruction);
             } else {
                 TransitionGameState(GameState.Defeat);
+
+                AudioManager.Instance.PlaySound(_onDefeatSFX, transform.position);
             }
         } else if (allEnemiesDead) {
             TransitionGameState(GameState.Victory);
+
+            AudioManager.Instance.PlaySound(_onVictorySFX, transform.position);
         }
     }
 }
