@@ -19,7 +19,7 @@ public class Ability {
 
     public bool IsCoolingDown { get => _isCoolingDown; }
 
-    public void StartCooldown() {
-        _timeOffCooldown = Time.time + _cooldown;
+    public void StartCooldown(float cooldownReduction = 1) {
+        _timeOffCooldown = Time.time + (_cooldown * cooldownReduction);
     }
 }

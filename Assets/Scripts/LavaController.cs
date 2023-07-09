@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BurnTicker {
+public class Ticker {
     public float timeStarted = 0;
     public float tickCounter = 0;
 }
 
 public class LavaController : MonoBehaviour {
-    private Dictionary<Damagable, BurnTicker> _targets;
+    private Dictionary<Damagable, Ticker> _targets;
 
     [SerializeField]
     private float _tickRate = .3f;
@@ -16,7 +16,7 @@ public class LavaController : MonoBehaviour {
     private AudioClip _burnSFX;
 
     private void Awake() {
-        _targets = new Dictionary<Damagable, BurnTicker>();
+        _targets = new Dictionary<Damagable, Ticker>();
     }
 
     private void Update() {
@@ -40,7 +40,7 @@ public class LavaController : MonoBehaviour {
             return;
         }
 
-        BurnTicker newTicker = new BurnTicker();
+        Ticker newTicker = new Ticker();
         newTicker.timeStarted = Time.time;
         _targets.Add(hitDamagable, newTicker);
 
@@ -68,7 +68,7 @@ public class LavaController : MonoBehaviour {
             return;
         }
 
-        BurnTicker ticker = _targets[hitDamagable];
+        Ticker ticker = _targets[hitDamagable];
 
         ticker.tickCounter += 1;
 

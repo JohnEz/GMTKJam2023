@@ -14,6 +14,11 @@ public class CharacterStats : MonoBehaviour {
 
     private int _currentHealth;
 
+    [SerializeField]
+    private int _numHealthBars = 1;
+
+    private int _healthBarsDepleted = 0;
+
     [HideInInspector]
     public int CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
 
@@ -23,9 +28,12 @@ public class CharacterStats : MonoBehaviour {
 
     public Action OnHealthChanged;
 
+    public Action<int> OnHealthBarEmpty;
+
     public Action OnDeath;
 
     private void Awake() {
+        _healthBarsDepleted = 0;
         CurrentHealth = MaxHealth;
     }
 
@@ -33,8 +41,16 @@ public class CharacterStats : MonoBehaviour {
         _currentHealth = Math.Clamp(value, 0, _isDead ? 0 : _maxHealth);
 
         if (!_isDead && _currentHealth <= 0) {
-            _isDead = true;
-            OnDeath?.Invoke();
+            _healthBarsDepleted++;
+
+            OnHealthBarEmpty?.Invoke(_healthBarsDepleted);
+
+            if (_healthBarsDepleted < _numHealthBars) {
+                _currentHealth = _maxHealth;
+            } else {
+                _isDead = true;
+                OnDeath?.Invoke();
+            }
         }
 
         OnHealthChanged?.Invoke();
@@ -52,5 +68,9 @@ public class CharacterStats : MonoBehaviour {
 
     public void TakeDamage(int damage) {
         CurrentHealth -= damage;
+    }
+
+    public void TakeHealing(int healing) {
+        CurrentHealth += healing;
     }
 }

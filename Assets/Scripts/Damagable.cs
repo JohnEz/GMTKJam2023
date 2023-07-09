@@ -21,4 +21,14 @@ public class Damagable : MonoBehaviour {
             _flashTarget.StartFlash();
         }
     }
+
+    public void TakeHealing(int healing) {
+        if (_myStats) {
+            _myStats.TakeHealing(healing);
+        }
+
+        if (_flashTarget) {
+            _flashTarget.StartFlash(true);
+        }
+    }
 }
