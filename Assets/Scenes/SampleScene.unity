@@ -13537,7 +13537,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 6.01
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -21137,9 +21137,10 @@ MonoBehaviour:
   - {fileID: 703837092}
   - {fileID: 1661339855}
   Player: {fileID: 1017035335}
-  skipIntro: 1
+  skipIntro: 0
   gameState: 0
   introDirector: {fileID: 1035367921}
+  interludeDirector: {fileID: 1205073328}
   _stopCombatEvent: {fileID: 11400000, guid: 1903c03da0ccf124285a8e1a8db6c7d3, type: 2}
   _startCombatEvent: {fileID: 11400000, guid: 7309a8b7a23cf834e8180d6b7792c7a1, type: 2}
   _beamAbility:
@@ -21178,12 +21179,27 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 47bd2cebac8272945851d6182dc4594d, type: 2}
+    - {fileID: 11400000, guid: 271fd576820eecb4e811fd8b232a0b17, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1027611262}
           m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
           m_MethodName: EndIntro
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1027611262}
+          m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+          m_MethodName: EndInterlude
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -25588,7 +25604,7 @@ PlayableDirector:
   - key: {fileID: 7521135033954201614, guid: 7fc8e614d922e8b4db65faad46aa7ee4, type: 2}
     value: {fileID: 1017035343}
   - key: {fileID: -6061201345476060407, guid: 7fc8e614d922e8b4db65faad46aa7ee4, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 1027611264}
   m_ExposedReferences:
     m_References:
     - e8c1a8f4f89391049972bbf763928b08: {fileID: 2114085215}
@@ -39946,7 +39962,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 9
   m_StandbyUpdate: 0
-  m_LookAt: {fileID: 0}
+  m_LookAt: {fileID: 1017035331}
   m_Follow: {fileID: 1017035331}
   m_Lens:
     FieldOfView: 34
@@ -39973,14 +39989,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2114085214}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2033946225}
-  m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_Father: {fileID: 1017035331}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1976078630871627744
 PrefabInstance:

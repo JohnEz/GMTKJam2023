@@ -25,6 +25,7 @@ public class GameManager : Singleton<GameManager> {
     public GameState gameState = GameState.Intro;
 
     public GameObject introDirector;
+    public GameObject interludeDirector;
 
     public bool IsGameActive => gameState == GameState.Combat;
 
@@ -43,6 +44,11 @@ public class GameManager : Singleton<GameManager> {
         TransitionGameState(GameState.Combat);
     }
 
+    public void EndInterlude() {
+        Player.GetComponentInChildren<Abilities>().EnableAbility(2);
+        TransitionGameState(GameState.Combat);
+    }
+
     public void TransitionGameState(GameState newState) {
         gameState = newState;
 
@@ -57,9 +63,8 @@ public class GameManager : Singleton<GameManager> {
                 StartCombat();
                 break;
             case GameState.PhaseInterlude:
-                // FINDME: Jamie I guess we do something here with a director?
                 StopCombat();
-                Invoke(nameof(OnInterludeComplete), 5f);
+                interludeDirector.GetComponent<PlayableDirector>().Play();
                 break;
             case GameState.Victory:
                 StopCombat();
@@ -86,13 +91,6 @@ public class GameManager : Singleton<GameManager> {
         if (_startCombatEvent) {
             _startCombatEvent.Raise();
         }
-    }
-
-    public void OnInterludeComplete() {
-        Player.GetComponentInChildren<Abilities>().EnableAbility(2);
-
-        // FINDME: Jamie I guess this is called when we're done with the interlude
-        TransitionGameState(GameState.Combat);
     }
 
     private void Awake() {
