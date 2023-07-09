@@ -77,7 +77,7 @@ public class HealthBarController : MonoBehaviour {
         damageBarShrinkTimer = DAMAGE_BAR_SHRINK_TIMER_MAX;
     }
 
-    public void OnHealthBarDepleted(int index) {
+    private void OnHealthBarDepleted(int index) {
         SetHealthBarColour(index + 1);
     }
 

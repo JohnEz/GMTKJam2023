@@ -82,9 +82,7 @@ public class Projectile : MonoBehaviour {
 
             AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
 
-            if (_destroyOnImpact) {
-                Destroy(gameObject);
-            }
+            OnImpact();
         }
     }
 
@@ -93,6 +91,10 @@ public class Projectile : MonoBehaviour {
             GameObject effectsInstance = Instantiate(_impactEffects, transform.position, default);
             Effects effects = effectsInstance.GetComponent<Effects>();
             effects.Execute(transform);
+        }
+
+        if (_destroyOnImpact) {
+            Destroy(gameObject);
         }
     }
 
