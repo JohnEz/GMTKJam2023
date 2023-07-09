@@ -53,4 +53,8 @@ public class CharacterStats : MonoBehaviour {
     public void TakeDamage(int damage) {
         CurrentHealth -= damage;
     }
+
+    public void TakeHealing(int healing) {
+        CurrentHealth += healing;
+    }
 }
