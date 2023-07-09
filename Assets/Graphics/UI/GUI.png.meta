@@ -378,16 +378,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GUI_13
+      name: Chat_Bubble
       rect:
         serializedVersion: 2
         x: 145
         y: 225
         width: 46
         height: 14
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 2, y: 2, z: 2, w: 2}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2089,12 +2089,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Chat_Bubble: 201318757
       GUI_0: 1574429118
       GUI_1: 373342151
       GUI_10: 1335411159
       GUI_11: -331864163
       GUI_12: -33496085
-      GUI_13: 201318757
       GUI_15: 191535225
       GUI_16: 1540455102
       GUI_17: -771651434
