@@ -8,6 +8,12 @@ public class ProjectileImpactHandler : MonoBehaviour {
 
     private Projectile _projectile;
 
+    [SerializeField]
+    private AudioClip _impactSFX;
+
+    [SerializeField]
+    private bool _shiftPitch = false;
+
     public void Awake() {
         _collider = GetComponent<Collider2D>();
         _projectile = GetComponentInParent<Projectile>();
@@ -17,6 +23,8 @@ public class ProjectileImpactHandler : MonoBehaviour {
         _collider.enabled = true;
 
         _projectile.OnImpact();
+
+        AudioManager.Instance.PlaySound(_impactSFX, transform.position, _shiftPitch);
 
         StartCoroutine(DisableCollision());
     }
