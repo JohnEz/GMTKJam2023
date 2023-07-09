@@ -27,6 +27,8 @@ public class CharacterStats : MonoBehaviour {
 
     public Action OnDeath;
 
+    public int faction = 1;
+
     private void Awake() {
         _currentHealthBar = 0;
         CurrentHealth = MaxHealth;

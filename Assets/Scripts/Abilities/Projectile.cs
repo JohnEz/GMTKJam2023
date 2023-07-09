@@ -76,7 +76,10 @@ public class Projectile : MonoBehaviour {
 
         Damagable originDamagable = _origin.GetComponent<Damagable>();
 
-        if (hitDamagable != originDamagable) {
+        int myFaction = _origin.GetComponent<CharacterStats>().faction;
+        int otherFaction = collision.gameObject.GetComponent<CharacterStats>().faction;
+
+        if (hitDamagable != originDamagable && myFaction != otherFaction) {
             hitDamagable.TakeDamage(_damage);
 
             AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
