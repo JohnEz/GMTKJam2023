@@ -162,7 +162,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Unknown
   MoveSpeed: 4
-  _healthBars: 64000000
+  _healthBars: 2c010000
+  faction: 1
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _arrowCastStartSFX: {fileID: 8300000, guid: e532f01a72d21204e920570c3b6257d0, type: 3}
   arrowAbility:
+    _enabled: 1
+    _indicators: []
     CastTime: 0.4
     _cooldown: 2
     _effects: {fileID: 1932630230815302502, guid: a7feb998940bb6b4b9a56e179b79ce2d, type: 3}

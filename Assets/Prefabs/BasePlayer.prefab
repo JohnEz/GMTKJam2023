@@ -47,14 +47,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _abilities:
   - _enabled: 1
+    _indicators: []
     CastTime: 0
     _cooldown: 1
     _effects: {fileID: 0}
   - _enabled: 1
+    _indicators: []
     CastTime: 0.1
     _cooldown: 3
     _effects: {fileID: 0}
   - _enabled: 0
+    _indicators: []
     CastTime: 0.3
     _cooldown: 10
     _effects: {fileID: 0}
@@ -224,7 +227,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Big Bad Enemy Crab
   MoveSpeed: 4
-  _healthBars: 2800000046000000
+  _healthBars: c800000090010000
   faction: 2
 --- !u!114 &1276620086668443503
 MonoBehaviour:

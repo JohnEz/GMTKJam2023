@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: _healthBars.Array.data[0]
-      value: 60
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
