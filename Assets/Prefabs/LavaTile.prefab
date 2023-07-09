@@ -320,3 +320,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tickRate: 0.3
+  _burnSFX: {fileID: 8300000, guid: 62828bec3cf6e8a4393dd5839810e68a, type: 3}

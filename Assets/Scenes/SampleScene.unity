@@ -20902,8 +20902,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dcc11a4ae6e1f747837363f70729a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   _tickRate: 0.75
   _burnSFX: {fileID: 0}
+=======
+  _tickRate: 0.5
+  _burnSFX: {fileID: 8300000, guid: 62828bec3cf6e8a4393dd5839810e68a, type: 3}
+>>>>>>> Stashed changes
 --- !u!1001 &943563839
 PrefabInstance:
   m_ObjectHideFlags: 0
