@@ -10,6 +10,7 @@ public class CharacterCutscene : MonoBehaviour {
 
     [SerializeField]
     private float targetPositionTolerance = 0.5f;
+
     private CharacterMovement _movement;
     private ChatBubbleController _chatBubbleController;
     private Vector3 target = Vector3.zero;
@@ -47,8 +48,11 @@ public class CharacterCutscene : MonoBehaviour {
         _chatBubbleController.Setup(text);
     }
 
-    private IEnumerator MoveToTarget (Vector3 newTarget)
-    {
+    public void ShakeScreen() {
+        CameraManager.Instance.ShakeCameraInterlude(2f, .75f);
+    }
+
+    private IEnumerator MoveToTarget(Vector3 newTarget) {
         target = newTarget;
         while (Mathf.Abs(GetDistanceToTarget()) > targetPositionTolerance) {
             MoveTowardsTarget();
@@ -59,8 +63,8 @@ public class CharacterCutscene : MonoBehaviour {
 
     private IEnumerator MoveAlongPath(List<Vector3> targets) {
         int index = 0;
-    
-        while(index < startingPath.Count) {
+
+        while (index < startingPath.Count) {
             target = targets[index];
             if (Mathf.Abs(GetDistanceToTarget()) > targetPositionTolerance) {
                 MoveTowardsTarget();

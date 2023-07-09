@@ -37,7 +37,7 @@ public class CharacterController : MonoBehaviour {
     [SerializeField]
     private Animator _animator;
 
-    private float RANDOM_ACTION_DELAY = 5f;
+    private float RANDOM_ACTION_DELAY = 4f;
     private float RANDOM_ACTION_VARIANCE = .33f;
 
     private float randomActionTimer = 0f;

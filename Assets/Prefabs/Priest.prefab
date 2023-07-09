@@ -9,11 +9,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: preferredMaxRange
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: preferredMinRange
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: _onDeathSFX

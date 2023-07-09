@@ -21539,6 +21539,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6b715f264ad444e4a8dd9f0245b7c2a7, type: 2}
     - {fileID: 11400000, guid: 5e9256ea6b6103a48b0dbb4b10451d44, type: 2}
     - {fileID: 11400000, guid: e65eda3391e818a4cac7efeba11766fd, type: 2}
+    - {fileID: 11400000, guid: 74acde7bf59f38c4c99efd0e5d650298, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -21573,6 +21574,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1017035344}
           m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
           m_MethodName: PlayNextDialogInterlude
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1017035344}
+          m_TargetAssemblyTypeName: CharacterCutscene, Assembly-CSharp
+          m_MethodName: ShakeScreen
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -26338,8 +26353,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1410188277}
   - component: {fileID: 1410188280}
-  - component: {fileID: 1410188279}
-  - component: {fileID: 1410188278}
   - component: {fileID: 1410188281}
   m_Layer: 0
   m_Name: cm
@@ -26363,55 +26376,6 @@ Transform:
   m_Father: {fileID: 1634677316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1410188278
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410188276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7155796051b734daa718462081dc5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
-  m_AngularDampingMode: 0
-  m_PitchDamping: 0
-  m_YawDamping: 0
-  m_RollDamping: 0
-  m_AngularDamping: 0
---- !u!114 &1410188279
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410188276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4044717213e31446939f7bd49c896ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 0
-  m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
-  m_DeadZoneWidth: 0
-  m_DeadZoneHeight: 0
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
-  m_BiasX: 0
-  m_BiasY: 0
-  m_CenterOnActivate: 1
 --- !u!114 &1410188280
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -40039,6 +40003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameCamera: {fileID: 1634677315}
+  _interludeCamera: {fileID: 2114085215}
 --- !u!4 &1807817319
 Transform:
   m_ObjectHideFlags: 0
@@ -40408,6 +40373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033946225}
   - component: {fileID: 2033946226}
+  - component: {fileID: 2033946227}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -40442,6 +40408,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2033946227
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033946224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 2
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &2055765166
 GameObject:
   m_ObjectHideFlags: 0

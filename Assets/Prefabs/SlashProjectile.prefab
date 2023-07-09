@@ -55,7 +55,7 @@ MonoBehaviour:
   _destroyOnImpact: 1
   _missEffects: {fileID: 0}
   _impactEffects: {fileID: 0}
-  _maxDistance: 2
+  _maxDistance: 3
   _damage: 2
   _shiftPitch: 1
 --- !u!114 &8592674802835073797
