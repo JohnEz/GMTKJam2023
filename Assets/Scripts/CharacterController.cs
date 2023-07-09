@@ -11,8 +11,14 @@ public class CharacterController : MonoBehaviour {
     [SerializeField]
     private Transform _weaponAnchor;
 
-    private float MIN_RANGE = 4f;
+    private float MIN_RANGE = 1.5f;
     private float MAX_RANGE = 10f;
+
+    [SerializeField]
+    private float preferredMinRange = 4f;
+
+    [SerializeField]
+    private float preferredMaxRange = 10f;
 
     private float _targetRange = 9f;
     private float RANGE_TOLERANCE = 2f;
@@ -88,7 +94,7 @@ public class CharacterController : MonoBehaviour {
     }
 
     private void ChangeRange() {
-        _targetRange = Random.Range(MIN_RANGE, MAX_RANGE);
+        _targetRange = Random.Range(preferredMinRange, preferredMaxRange);
     }
 
     private void HandleDeath() {

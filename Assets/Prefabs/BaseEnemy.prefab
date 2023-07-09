@@ -142,6 +142,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   _weaponAnchor: {fileID: 6490498890921624425}
+  preferredMinRange: 6
+  preferredMaxRange: 10
   _checks: {fileID: 4234917013004777466}
   _animator: {fileID: 8563483024510816505}
 --- !u!114 &1923494030384655132

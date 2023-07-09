@@ -83,15 +83,19 @@ public class Projectile : MonoBehaviour {
     }
 
     public void OnImpact() {
-        GameObject effectsInstance = Instantiate(_impactEffects, transform.position, default);
-        Effects effects = effectsInstance.GetComponent<Effects>();
-        effects.Execute(transform);
+        if (_impactEffects) {
+            GameObject effectsInstance = Instantiate(_impactEffects, transform.position, default);
+            Effects effects = effectsInstance.GetComponent<Effects>();
+            effects.Execute(transform);
+        }
     }
 
     private void OnMiss() {
-        GameObject effectsInstance = Instantiate(_missEffects, transform.position, default);
-        Effects effects = effectsInstance.GetComponent<Effects>();
-        effects.Execute(transform);
+        if (_missEffects) {
+            GameObject effectsInstance = Instantiate(_missEffects, transform.position, default);
+            Effects effects = effectsInstance.GetComponent<Effects>();
+            effects.Execute(transform);
+        }
 
         if (_destroyOnImpact) {
             Destroy(gameObject);

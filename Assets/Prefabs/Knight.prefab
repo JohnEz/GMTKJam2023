@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: preferredMaxRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: preferredMinRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
       value: Knight
@@ -14,6 +22,18 @@ PrefabInstance:
     - target: {fileID: 3706555709098809179, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852860896828845083, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: arrowAbility.CastTime
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3852860896828845083, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: arrowAbility._effects
+      value: 
+      objectReference: {fileID: 1932630230815302502, guid: 53659a31e89d3be47b7c7e7e5ac19ef2, type: 3}
+    - target: {fileID: 3852860896828845083, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: arrowAbility._cooldown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6546059514857901335, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_IsActive
