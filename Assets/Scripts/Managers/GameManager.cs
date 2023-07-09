@@ -78,18 +78,15 @@ public class GameManager : Singleton<GameManager> {
                 break;
 
             case GameState.Victory:
-                StopCombat();
-                CanvasManager.Instance.GameOverScreen.Show("Defeat...", "(For the intrusive heroes!)", "Replay");
+                OnGameOver("Defeat...", "(For the intrusive heroes!)", "Replay");
                 break;
 
             case GameState.Defeat:
-                StopCombat();
-                CanvasManager.Instance.GameOverScreen.Show("Victory!", "(For the intrusive heroes...)", "Retry");
+                OnGameOver("Victory!", "(For the intrusive heroes...)", "Retry");
                 break;
 
             case GameState.MutualDestruction:
-                StopCombat();
-                CanvasManager.Instance.GameOverScreen.Show("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
+                OnGameOver("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
                 break;
         }
     }
@@ -157,5 +154,11 @@ public class GameManager : Singleton<GameManager> {
 
             AudioManager.Instance.PlaySound(_onVictorySFX, transform.position);
         }
+    }
+
+    private void OnGameOver(string title, string message, string playButtonText) {
+        StopCombat();
+        CanvasManager.Instance.GameOverScreen.Show(title, message, playButtonText);
+        AudioManager.Instance.GetComponent<AudioSource>().enabled = false;
     }
 }
