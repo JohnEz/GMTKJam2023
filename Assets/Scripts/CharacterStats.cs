@@ -29,6 +29,9 @@ public class CharacterStats : MonoBehaviour {
 
     public int faction = 1;
 
+    [SerializeField]
+    private AudioClip _onDeathSFX;
+
     private void Awake() {
         _currentHealthBar = 0;
         CurrentHealth = MaxHealth;
@@ -69,6 +72,8 @@ public class CharacterStats : MonoBehaviour {
             } else {
                 IsDead = true;
                 OnDeath?.Invoke();
+
+                AudioManager.Instance.PlaySound(_onDeathSFX, transform);
             }
         }
 
