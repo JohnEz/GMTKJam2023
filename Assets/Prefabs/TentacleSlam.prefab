@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ddb78691b0ba5a48bc89e298e631c5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactSFX: {fileID: 8300000, guid: cf816bdc687a6fb4eb3597db3f098e52, type: 3}
+  _impactSFX: {fileID: 8300000, guid: 5b8451e3fc8ffa94e8d4b540d4d17c12, type: 3}
   _shiftPitch: 1
 --- !u!1 &5022802241619442146
 GameObject:
