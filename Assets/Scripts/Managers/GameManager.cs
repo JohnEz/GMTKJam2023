@@ -11,6 +11,8 @@ public class GameManager : Singleton<GameManager> {
 
     public bool skipIntro = false;
 
+    public bool skipInterlude = false;
+
     [SerializeField]
     private AudioClip _onDefeatSFX;
 
@@ -121,7 +123,11 @@ public class GameManager : Singleton<GameManager> {
 
     private void OnHealthBarDepleted(int index) {
         if (index == 0) {
-            TransitionGameState(GameState.PhaseInterlude);
+            if (skipInterlude) {
+                EndInterlude();
+            } else {
+                TransitionGameState(GameState.PhaseInterlude);
+            }
         }
     }
 
