@@ -17,5 +17,5 @@ MonoBehaviour:
   MoveLeft: 97
   MoveRight: 100
   Ability1: 0
-  Ability2: 32
-  Ability3: 1
+  Ability2: 1
+  Ability3: 32

@@ -1,8 +1,23 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class Ability {
+    [SerializeField]
+    private bool _enabled = true;
+
+    public bool Enabled {
+        get => _enabled;
+        set {
+            _enabled = value;
+            _indicators.ForEach((indicator) => indicator.SetActive(_enabled));
+        }
+    }
+
+    [SerializeField]
+    private List<GameObject> _indicators;
+
     public float CastTime = 0.4f;
 
     [SerializeField]

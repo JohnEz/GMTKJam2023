@@ -33,11 +33,11 @@ public class Crosshair : MonoBehaviour {
         }
 
         if (abilities.AbilitiesList[1] != null) {
-            spacebarBar.fillAmount = CalculateBarFill(abilities.AbilitiesList[1]);
+            rightClickBar.fillAmount = CalculateBarFill(abilities.AbilitiesList[1]);
         }
 
         if (abilities.AbilitiesList[2] != null) {
-            rightClickBar.fillAmount = CalculateBarFill(abilities.AbilitiesList[2]);
+            spacebarBar.fillAmount = CalculateBarFill(abilities.AbilitiesList[2]);
         }
     }
 

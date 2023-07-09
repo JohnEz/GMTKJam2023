@@ -59,7 +59,7 @@ public class GameManager : Singleton<GameManager> {
             case GameState.PhaseInterlude:
                 // FINDME: Jamie I guess we do something here with a director?
                 StopCombat();
-                Invoke(nameof(ResumeCombat), 5f);
+                Invoke(nameof(OnInterludeComplete), 5f);
                 break;
             case GameState.Victory:
                 StopCombat();
@@ -88,7 +88,9 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
-    public void ResumeCombat() {
+    public void OnInterludeComplete() {
+        Player.GetComponentInChildren<Abilities>().EnableAbility(2);
+
         // FINDME: Jamie I guess this is called when we're done with the interlude
         TransitionGameState(GameState.Combat);
     }
