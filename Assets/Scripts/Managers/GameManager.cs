@@ -62,12 +62,15 @@ public class GameManager : Singleton<GameManager> {
                 Invoke(nameof(ResumeCombat), 5f);
                 break;
             case GameState.Victory:
+                StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
                 break;
             case GameState.Defeat:
+                StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Victory!", "The world is safe again, for now...", "Replay");
                 break;
             case GameState.MutualDestruction:
+                StopCombat();
                 CanvasManager.Instance.GameOverScreen.Show("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
                 break;
         }
@@ -106,7 +109,9 @@ public class GameManager : Singleton<GameManager> {
     }
 
     private void OnHealthBarDepleted(int index) {
-        TransitionGameState(GameState.PhaseInterlude);
+        if (index == 0) {
+            TransitionGameState(GameState.PhaseInterlude);
+        }
     }
 
     private void CheckGameOver() {
