@@ -79,12 +79,12 @@ public class GameManager : Singleton<GameManager> {
 
             case GameState.Victory:
                 StopCombat();
-                CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
+                CanvasManager.Instance.GameOverScreen.Show("Game Over", "(For the intrusive heroes.)", "Replay");
                 break;
 
             case GameState.Defeat:
                 StopCombat();
-                CanvasManager.Instance.GameOverScreen.Show("Victory!", "The world is safe again, for now...", "Replay");
+                CanvasManager.Instance.GameOverScreen.Show("Victory!", "(For the intrusive heroes.)", "Retry");
                 break;
 
             case GameState.MutualDestruction:
