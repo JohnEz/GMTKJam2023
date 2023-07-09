@@ -33,7 +33,7 @@ PrefabInstance:
       objectReference: {fileID: 1932630230815302502, guid: 53659a31e89d3be47b7c7e7e5ac19ef2, type: 3}
     - target: {fileID: 3852860896828845083, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: arrowAbility._cooldown
-      value: 1
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 6546059514857901335, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_IsActive

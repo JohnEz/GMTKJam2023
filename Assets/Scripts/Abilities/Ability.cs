@@ -6,7 +6,7 @@ public class Ability {
     public float CastTime = 0.4f;
 
     [SerializeField]
-    private int _cooldown = 0;
+    private float _cooldown = 0;
 
     [SerializeField]
     private GameObject _effects;

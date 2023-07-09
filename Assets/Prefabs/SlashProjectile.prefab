@@ -56,6 +56,7 @@ MonoBehaviour:
   _missEffects: {fileID: 0}
   _impactEffects: {fileID: 0}
   _maxDistance: 2
+  _damage: 2
 --- !u!114 &8592674802835073797
 MonoBehaviour:
   m_ObjectHideFlags: 0

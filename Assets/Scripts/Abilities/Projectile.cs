@@ -32,6 +32,9 @@ public class Projectile : MonoBehaviour {
 
     private float _totalDistance = 0f;
 
+    [SerializeField]
+    private int _damage = 10;
+
     public void Launch(Transform origin, Vector3 target) {
         _origin = origin;
 
@@ -72,7 +75,7 @@ public class Projectile : MonoBehaviour {
         Damagable originDamagable = _origin.GetComponent<Damagable>();
 
         if (hitDamagable != originDamagable) {
-            hitDamagable.TakeDamage(10);
+            hitDamagable.TakeDamage(_damage);
 
             AudioManager.Instance.PlaySound(_onHitSFX, transform.position);
 
