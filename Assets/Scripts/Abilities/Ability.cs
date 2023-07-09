@@ -50,6 +50,10 @@ public class Ability {
 
         indicator.transform.localScale = new Vector3(0, 0, 0);
 
-        indicator.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(scaleCurve);
+        indicator.transform.DOScale(new Vector3(1, 1, 1), .5f).SetEase(scaleCurve);
+
+        DamageFlash flash = indicator.GetComponent<DamageFlash>();
+
+        flash?.StartFlash();
     }
 }
