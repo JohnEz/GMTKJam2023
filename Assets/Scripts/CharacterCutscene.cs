@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterCutscene : MonoBehaviour
-{
+public class CharacterCutscene : MonoBehaviour {
     public List<Vector3> startingPath = new List<Vector3>();
     public Vector3 startingPosition = Vector3.zero;
 
@@ -24,24 +23,19 @@ public class CharacterCutscene : MonoBehaviour
         StartCoroutine(MoveAlongPath(startingPath));
     }
 
-    private IEnumerator MoveToTarget (Vector3 newTarget)
-    {
+    private IEnumerator MoveToTarget(Vector3 newTarget) {
         target = newTarget;
-        while (Mathf.Abs(GetDistanceToTarget()) > targetPositionTolerance)
-        {
+        while (Mathf.Abs(GetDistanceToTarget()) > targetPositionTolerance) {
             MoveTowardsTarget();
             yield return null;
         }
         _movement.MoveDirection = Vector3.zero;
     }
 
-    private IEnumerator MoveAlongPath (List<Vector3> targets)
-    {
+    private IEnumerator MoveAlongPath(List<Vector3> targets) {
         int index = 0;
-    
-        while(index < startingPath.Count) {
-            Debug.Log("Walking");
-            Debug.Log(transform.position);
+
+        while (index < startingPath.Count) {
             target = targets[index];
             if (Mathf.Abs(GetDistanceToTarget()) > targetPositionTolerance) {
                 MoveTowardsTarget();

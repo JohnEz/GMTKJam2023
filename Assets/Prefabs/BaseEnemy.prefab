@@ -104,7 +104,7 @@ MonoBehaviour:
   arrowAbility:
     CastTime: 0.4
     _cooldown: 2
-    _effect: {fileID: 1932630230815302502, guid: a7feb998940bb6b4b9a56e179b79ce2d, type: 3}
+    _effects: {fileID: 1932630230815302502, guid: a7feb998940bb6b4b9a56e179b79ce2d, type: 3}
 --- !u!114 &1924203386141499780
 MonoBehaviour:
   m_ObjectHideFlags: 0

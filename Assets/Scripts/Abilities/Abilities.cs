@@ -26,9 +26,9 @@ public class Abilities : MonoBehaviour {
         _castController.Cast(ability, () => {
             ability.StartCooldown();
 
-            GameObject effectInstance = Instantiate(ability.Effect, targetPosition, default);
-            Effect effect = effectInstance.GetComponent<Effect>();
-            effect.Execute(transform.parent);
+            GameObject effectsInstance = Instantiate(ability.Effects, targetPosition, default);
+            Effects effects = effectsInstance.GetComponent<Effects>();
+            effects.Execute(transform.parent);
         }, null);
 
         return;

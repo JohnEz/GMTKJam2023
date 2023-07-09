@@ -21,9 +21,9 @@ public class CharacterAttacks : MonoBehaviour {
         _castController.Cast(arrowAbility, () => {
             arrowAbility.StartCooldown();
 
-            GameObject effectInstance = Instantiate(arrowAbility.Effect, target.position, default);
-            Effect effect = effectInstance.GetComponent<Effect>();
-            effect.Execute(transform);
+            GameObject effectsInstance = Instantiate(arrowAbility.Effects, target.position, default);
+            Effects effects = effectsInstance.GetComponent<Effects>();
+            effects.Execute(transform);
         }, () => {
             AudioManager.Instance.PlaySound(_arrowCastStartSFX, transform.position);
         });

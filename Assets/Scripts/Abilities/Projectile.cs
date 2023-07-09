@@ -22,7 +22,10 @@ public class Projectile : MonoBehaviour {
     private bool _destroyOnImpact = true;
 
     [SerializeField]
-    private List<GameObject> _missEffects;
+    private GameObject _missEffects;
+
+    [SerializeField]
+    private GameObject _impactEffects;
 
     [SerializeField]
     private float _maxDistance = -1f;
@@ -79,12 +82,16 @@ public class Projectile : MonoBehaviour {
         }
     }
 
+    public void OnImpact() {
+        GameObject effectsInstance = Instantiate(_impactEffects, transform.position, default);
+        Effects effects = effectsInstance.GetComponent<Effects>();
+        effects.Execute(transform);
+    }
+
     private void OnMiss() {
-        foreach (GameObject missEffect in _missEffects) {
-            GameObject effectInstance = Instantiate(missEffect, transform.position, default);
-            Effect effect = effectInstance.GetComponent<Effect>();
-            effect.Execute(transform);
-        }
+        GameObject effectsInstance = Instantiate(_missEffects, transform.position, default);
+        Effects effects = effectsInstance.GetComponent<Effects>();
+        effects.Execute(transform);
 
         if (_destroyOnImpact) {
             Destroy(gameObject);

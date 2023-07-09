@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1090596437761902070}
   - component: {fileID: -425245580780786092}
+  - component: {fileID: 707481852408703797}
   m_Layer: 0
-  m_Name: Effect
+  m_Name: Effects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,3 +46,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 8
+--- !u!114 &707481852408703797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8304443583359402424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d95c4df9312b2e47a326d9c3a44b9f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

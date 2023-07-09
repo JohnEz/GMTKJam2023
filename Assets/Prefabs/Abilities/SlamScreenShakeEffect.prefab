@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -425245580780786092, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
+      propertyPath: lifespan
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1090596437761902070, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304443583359402424, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
       propertyPath: m_Name
-      value: LavaSplashEffect
+      value: ScreenShakeEffect
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
@@ -62,22 +66,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8304443583359402424, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
   m_PrefabInstance: {fileID: 7632857566602961630}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-3591679631787865036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1932630230815302502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55587f852a1409648b74a96e2bf368c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _repeat: 1
-  _repeatPeriodSeconds: 0
-  _objectPrefab: {fileID: 8370132659932722501, guid: 5c44fc25824be474bacdee35a2504646, type: 3}
---- !u!114 &5252846967963749477
+--- !u!114 &4099836544337545646
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,5 +80,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _repeat: 1
   _repeatPeriodSeconds: 0
-  _intensity: 0.1
+  _intensity: 2.5
   _time: 0.2

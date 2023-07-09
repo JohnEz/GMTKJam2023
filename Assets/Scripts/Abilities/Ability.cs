@@ -9,9 +9,9 @@ public class Ability {
     private int _cooldown = 0;
 
     [SerializeField]
-    private GameObject _effect;
+    private GameObject _effects;
 
-    public GameObject Effect => _effect;
+    public GameObject Effects => _effects;
 
     private float _timeOffCooldown = 0;
 

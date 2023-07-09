@@ -54,8 +54,8 @@ MonoBehaviour:
   _onloopSFX: {fileID: 0}
   _onHitSFX: {fileID: 0}
   _destroyOnImpact: 1
-  _missEffects:
-  - {fileID: 1932630230815302502, guid: d4ea0c77c63c7bb4d92beabb31495c34, type: 3}
+  _missEffects: {fileID: 1932630230815302502, guid: d4ea0c77c63c7bb4d92beabb31495c34, type: 3}
+  _impactEffects: {fileID: 0}
   _maxDistance: 5
 --- !u!114 &8592674802835073797
 MonoBehaviour:

@@ -473,6 +473,18 @@ PrefabInstance:
       propertyPath: _playerStats
       value: 
       objectReference: {fileID: 11400000, guid: 490ed0bd22bbd5448b1b88ff90f47387, type: 2}
+    - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+      propertyPath: _abilities.Array.data[0]._effects
+      value: 
+      objectReference: {fileID: 1932630230815302502, guid: 577e01237996d4141abd03972de0eeb5, type: 3}
+    - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+      propertyPath: _abilities.Array.data[1]._effects
+      value: 
+      objectReference: {fileID: 1932630230815302502, guid: 318967ac3f0e2b546815c16fffa7561b, type: 3}
+    - target: {fileID: 3892909203855904362, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+      propertyPath: _abilities.Array.data[2]._effects
+      value: 
+      objectReference: {fileID: 1932630230815302502, guid: 6c4fec5f72c27924491639278c0032f1, type: 3}
     - target: {fileID: 4731680491587793111, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
       propertyPath: m_Name
       value: Player
