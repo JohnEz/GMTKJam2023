@@ -1,17 +1,22 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 [Serializable]
 public class Ability {
+
     [SerializeField]
     private bool _enabled = true;
+
+    [SerializeField]
+    private AnimationCurve scaleCurve = new AnimationCurve();
 
     public bool Enabled {
         get => _enabled;
         set {
             _enabled = value;
-            _indicators.ForEach((indicator) => indicator.SetActive(_enabled));
+            _indicators.ForEach((indicator) => EnableIndicator(indicator));
         }
     }
 
@@ -38,5 +43,13 @@ public class Ability {
 
     public void StartCooldown(float cooldownReduction = 1) {
         TimeOffCooldown = Time.time + (_cooldown * cooldownReduction);
+    }
+
+    private void EnableIndicator(GameObject indicator) {
+        indicator.SetActive(_enabled);
+
+        indicator.transform.localScale = new Vector3(0, 0, 0);
+
+        indicator.transform.DOScale(new Vector3(1, 1, 1), 1f).SetEase(scaleCurve);
     }
 }
