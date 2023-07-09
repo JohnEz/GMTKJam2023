@@ -6,6 +6,7 @@ public class CharacterCutscene : MonoBehaviour {
     public List<Vector3> startingPath = new List<Vector3>();
     public Vector3 startingPosition = Vector3.zero;
     public List<string> introDialog = new List<string>();
+    public List<string> interludeDialog = new List<string>();
 
     [SerializeField]
     private float targetPositionTolerance = 0.5f;
@@ -13,6 +14,7 @@ public class CharacterCutscene : MonoBehaviour {
     private ChatBubbleController _chatBubbleController;
     private Vector3 target = Vector3.zero;
     private int introDialogPointer = 0;
+    private int interludeDialogPointer = 0;
 
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
@@ -30,6 +32,11 @@ public class CharacterCutscene : MonoBehaviour {
     public void PlayNextDialog() {
         DisplayChatBubble(introDialog[introDialogPointer]);
         introDialogPointer++;
+    }
+
+    public void PlayNextDialogInterlude() {
+        DisplayChatBubble(interludeDialog[interludeDialogPointer]);
+        interludeDialogPointer++;
     }
 
     public void HideChatBubble() {

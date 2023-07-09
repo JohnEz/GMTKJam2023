@@ -338,6 +338,13 @@ MonoBehaviour:
   introDialog:
   - Wait, what's going on? My name is Brian.
   - And I'm not the "Scourge" of anything, I live here!
+  interludeDialog:
+  - That's it! I've HAD ENOUGH.
+  - You walk into MY HOME and expect what?
+  - A fancy sword?
+  - Some cursed armour?
+  - A LOOT BOX?
+  - No more Mr. Nice Brian...
   targetPositionTolerance: 0.5
 --- !u!1 &5105694057839450807
 GameObject:
