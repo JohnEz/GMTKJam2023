@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Unknown
   MoveSpeed: 4
-  _maxHealth: 150
+  _healthBars: 64000000
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,6 +193,7 @@ MonoBehaviour:
     CastTime: 0.4
     _cooldown: 2
     _effects: {fileID: 1932630230815302502, guid: a7feb998940bb6b4b9a56e179b79ce2d, type: 3}
+  _cooldownRandom: 0
 --- !u!114 &1924203386141499780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +258,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 2
   m_LinearDrag: 5000
   m_AngularDrag: 5000
   m_GravityScale: 0
@@ -957,6 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flashColor: {r: 1, g: 1, b: 1, a: 1}
+  _flashHealColor: {r: 0, g: 1, b: 0, a: 1}
   _flashTime: 0.125
   _flashCurve:
     serializedVersion: 2

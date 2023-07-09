@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: preferredMinRange
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: _healthBars.Array.data[0]
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
       value: Knight
@@ -45,7 +49,7 @@ PrefabInstance:
       objectReference: {fileID: 20852223, guid: 7d0c829ee5aee1f40bb3ab51931fe891, type: 3}
     - target: {fileID: 7948593720473592109, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Mass
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8204057701746915760, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_IsActive

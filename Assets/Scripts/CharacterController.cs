@@ -58,6 +58,7 @@ public class CharacterController : MonoBehaviour {
     public void Update() {
         if (_myStats.IsDead || !GameManager.Instance.IsGameActive) {
             GetComponent<CircleCollider2D>().enabled = false;
+            _movement.MoveDirection = Vector3.zero;
             return;
         }
 

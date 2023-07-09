@@ -27,20 +27,20 @@ public class HealthBarController : MonoBehaviour {
 
     private void Awake() {
         SetHp();
-        UpdateHealthBar(0);
+        SetHealthBarColour(0);
     }
 
     public void OnEnable() {
         if (_myStats != null) {
             _myStats.OnHealthChanged += SetHp;
-            _myStats.OnHealthBarEmpty += UpdateHealthBar;
+            _myStats.OnHealthBarDepleted += OnHealthBarDepleted;
         }
     }
 
     public void OnDisable() {
         if (_myStats != null) {
             _myStats.OnHealthChanged -= SetHp;
-            _myStats.OnHealthBarEmpty -= UpdateHealthBar;
+            _myStats.OnHealthBarDepleted -= OnHealthBarDepleted;
         }
     }
 
@@ -77,8 +77,11 @@ public class HealthBarController : MonoBehaviour {
         damageBarShrinkTimer = DAMAGE_BAR_SHRINK_TIMER_MAX;
     }
 
-    public void UpdateHealthBar(int healthBarsDepleted) {
-        int index = Mathf.Min(healthBarsDepleted, _healthBarColours.Count - 1);
-        healthBar.color = _healthBarColours[index];
+    private void OnHealthBarDepleted(int index) {
+        SetHealthBarColour(index + 1);
+    }
+
+    private void SetHealthBarColour(int colourIndex) {
+        healthBar.color = _healthBarColours[Mathf.Min(colourIndex, _healthBarColours.Count - 1)];
     }
 }
