@@ -21634,6 +21634,8 @@ MonoBehaviour:
   Player: {fileID: 1017035335}
   skipIntro: 0
   skipInterlude: 0
+  _onDefeatSFX: {fileID: 8300000, guid: ebd3221ee5031f8479516c1c8ae28e61, type: 3}
+  _onVictorySFX: {fileID: 8300000, guid: 44ed8e96f5334664fa61c8d7d42f2584, type: 3}
   gameState: 0
   introDirector: {fileID: 1035367921}
   interludeDirector: {fileID: 1205073328}
