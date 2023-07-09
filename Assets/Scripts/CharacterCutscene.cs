@@ -17,7 +17,6 @@ public class CharacterCutscene : MonoBehaviour {
     private void Awake() {
         _movement = GetComponent<CharacterMovement>();
         _chatBubbleController = transform.Find("ChatBubble").GetComponent<ChatBubbleController>();
-        _chatBubbleController.HideChatBubble();
     }
 
     public void SetupIntro() {

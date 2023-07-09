@@ -16,6 +16,8 @@ public class ChatBubbleController : MonoBehaviour {
         _arrowSpriteRenderer = transform.Find("Arrow").GetComponent<SpriteRenderer>();
         _textMeshPro = transform.Find("Text").GetComponent<TextMeshPro>();
 
+        HideChatBubble();
+
         originalTextMeshPosition = _textMeshPro.transform.localPosition;
     }
 
