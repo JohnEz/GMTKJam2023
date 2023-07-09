@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8807161263453819340}
   - component: {fileID: 88324679391341684}
-  - component: {fileID: 6490187757040367964}
+  - component: {fileID: 2599564827374275152}
   m_Layer: 0
   m_Name: TentacleSlam
   m_TagString: Untagged
@@ -56,7 +56,7 @@ MonoBehaviour:
   _maxDistance: -1
   _damage: 10
   _shiftPitch: 0
---- !u!114 &6490187757040367964
+--- !u!114 &2599564827374275152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 8
+  triggers: []
 --- !u!1 &4298949271288497439
 GameObject:
   m_ObjectHideFlags: 0

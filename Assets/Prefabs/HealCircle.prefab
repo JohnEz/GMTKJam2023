@@ -130,6 +130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 3
+  triggers: []
 --- !u!82 &1213779446256372630
 AudioSource:
   m_ObjectHideFlags: 0

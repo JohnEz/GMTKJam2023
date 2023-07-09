@@ -74,5 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50751ca46a269643b11cc991c607cf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _repeat: 1
+  _repeatPeriodSeconds: 0
   _beamPrefab: {fileID: 8898881582593738257, guid: 8d3c4fbf67c9e324fbe7080bb6351c9c, type: 3}
   _attackSound: {fileID: 0}

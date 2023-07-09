@@ -46,6 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifespan: 8
+  triggers:
+  - {fileID: 11400000, guid: 1903c03da0ccf124285a8e1a8db6c7d3, type: 2}
 --- !u!114 &707481852408703797
 MonoBehaviour:
   m_ObjectHideFlags: 0

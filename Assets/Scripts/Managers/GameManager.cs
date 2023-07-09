@@ -33,6 +33,12 @@ public class GameManager : Singleton<GameManager> {
         || gameState == GameState.Defeat
         || gameState == GameState.MutualDestruction;
 
+    [SerializeField]
+    private GameEvent _stopCombatEvent;
+
+    [SerializeField]
+    private GameEvent _startCombatEvent;
+
     public void EndIntro() {
         TransitionGameState(GameState.Combat);
     }
@@ -48,11 +54,12 @@ public class GameManager : Singleton<GameManager> {
                 // Play cutscene
                 break;
             case GameState.Combat:
-                // Allow player and enemy movement
+                StartCombat();
                 break;
             case GameState.PhaseInterlude:
                 // FINDME: Jamie I guess we do something here with a director?
-                Invoke(nameof(ResumeCombat), 3f);
+                StopCombat();
+                Invoke(nameof(ResumeCombat), 5f);
                 break;
             case GameState.Victory:
                 CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
@@ -63,6 +70,18 @@ public class GameManager : Singleton<GameManager> {
             case GameState.MutualDestruction:
                 CanvasManager.Instance.GameOverScreen.Show("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
                 break;
+        }
+    }
+
+    private void StopCombat() {
+        if (_stopCombatEvent) {
+            _stopCombatEvent.Raise();
+        }
+    }
+
+    private void StartCombat() {
+        if (_startCombatEvent) {
+            _startCombatEvent.Raise();
         }
     }
 

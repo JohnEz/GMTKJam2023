@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 3467480784603131222}
   - component: {fileID: 5243450281337384557}
   - component: {fileID: 7502536258095632154}
+  - component: {fileID: 1751494937629418822}
   m_Layer: 0
   m_Name: BaseEnemy
   m_TagString: Untagged
@@ -310,6 +311,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07ffed13d518a49479b2121952c428b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1751494937629418822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3444906719881861685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47db4443ad33f0a4e8aed414268f4888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1903c03da0ccf124285a8e1a8db6c7d3, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1924203386141499780}
+        m_TargetAssemblyTypeName: CastController, Assembly-CSharp
+        m_MethodName: CastFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4018464515222320817
 GameObject:
   m_ObjectHideFlags: 0

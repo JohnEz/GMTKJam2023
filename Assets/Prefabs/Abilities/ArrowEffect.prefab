@@ -77,4 +77,3 @@ MonoBehaviour:
   _repeat: 1
   _repeatPeriodSeconds: 0
   _projectilePrefab: {fileID: 493542880508337329, guid: b71effe51d80a3b49a96f3fe1b691e06, type: 3}
-  _attackSound: {fileID: 8300000, guid: da789595590965c4593fc48d353c005c, type: 3}

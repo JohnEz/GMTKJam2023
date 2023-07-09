@@ -7,10 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -425245580780786092, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
-      propertyPath: lifespan
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1090596437761902070, guid: 0a43b1627cf10f54f813625efdd4fda4, type: 3}
       propertyPath: m_RootOrder
       value: 0

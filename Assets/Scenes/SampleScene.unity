@@ -21088,6 +21088,8 @@ MonoBehaviour:
   skipIntro: 1
   gameState: 0
   introDirector: {fileID: 1035367921}
+  _stopCombatEvent: {fileID: 11400000, guid: 1903c03da0ccf124285a8e1a8db6c7d3, type: 2}
+  _startCombatEvent: {fileID: 11400000, guid: 7309a8b7a23cf834e8180d6b7792c7a1, type: 2}
 --- !u!4 &1027611263
 Transform:
   m_ObjectHideFlags: 0
@@ -25699,6 +25701,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351033436}
   m_CullTransparentMesh: 1
+--- !u!1 &1391797061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1527831707301832181, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+  m_PrefabInstance: {fileID: 502867435}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1391797063 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1994919731284332249, guid: 126d88999f765ae4b97fe32980bf1a3d, type: 3}
+  m_PrefabInstance: {fileID: 502867435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391797061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a33e2a9d11ab6c341b3fa735c0f2e769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1391797065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391797061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47db4443ad33f0a4e8aed414268f4888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: {fileID: 11400000, guid: 1903c03da0ccf124285a8e1a8db6c7d3, type: 2}
+  Response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1391797063}
+        m_TargetAssemblyTypeName: CastController, Assembly-CSharp
+        m_MethodName: CastFail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1410188276
 GameObject:
   m_ObjectHideFlags: 3
