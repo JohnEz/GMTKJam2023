@@ -35,7 +35,28 @@ public class CharacterStats : MonoBehaviour {
     }
 
     private void SetCurrentHealth(int value) {
+        int previousHealth = _currentHealth;
+
         _currentHealth = Math.Clamp(value, 0, IsDead ? 0 : MaxHealth);
+
+        int newHealth = _currentHealth;
+        int ThirdHealth = MaxHealth / 3;
+
+        int TwoThirdHealth = (MaxHealth / 3) * 2;
+
+        if (previousHealth >= TwoThirdHealth && CurrentHealth < TwoThirdHealth) {
+            CharacterChatBubbleController chatBubble = GetComponent<CharacterChatBubbleController>();
+            if (chatBubble) {
+                chatBubble.Chat("I need healing!", 2f);
+            }
+        }
+
+        if (previousHealth >= ThirdHealth && CurrentHealth < ThirdHealth) {
+            CharacterChatBubbleController chatBubble = GetComponent<CharacterChatBubbleController>();
+            if (chatBubble) {
+                chatBubble.Chat("I'm going down!", 2f);
+            }
+        }
 
         if (!IsDead && _currentHealth <= 0) {
             OnHealthBarDepleted?.Invoke(_currentHealthBar);
