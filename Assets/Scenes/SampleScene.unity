@@ -454,6 +454,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a322e51b9047b6a409a2d4cf844fd85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthBarColours:
+  - {r: 0.14509805, g: 0.83137256, b: 0.40784314, a: 1}
+  - {r: 0.79865986, g: 0.8207547, b: 0.38327694, a: 1}
   healthBar: {fileID: 1351033438}
   damageBar: {fileID: 1917711537}
   nameText: {fileID: 222863728}

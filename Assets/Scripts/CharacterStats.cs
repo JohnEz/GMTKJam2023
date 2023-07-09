@@ -17,7 +17,7 @@ public class CharacterStats : MonoBehaviour {
     [SerializeField]
     private int _numHealthBars = 1;
 
-    private int _remainingHealthBars;
+    private int _healthBarsDepleted = 0;
 
     [HideInInspector]
     public int CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
@@ -33,7 +33,7 @@ public class CharacterStats : MonoBehaviour {
     public Action OnDeath;
 
     private void Awake() {
-        _remainingHealthBars = _numHealthBars;
+        _healthBarsDepleted = 0;
         CurrentHealth = MaxHealth;
     }
 
@@ -41,11 +41,11 @@ public class CharacterStats : MonoBehaviour {
         _currentHealth = Math.Clamp(value, 0, _isDead ? 0 : _maxHealth);
 
         if (!_isDead && _currentHealth <= 0) {
-            _remainingHealthBars--;
+            _healthBarsDepleted++;
 
-            OnHealthBarEmpty?.Invoke(_remainingHealthBars);
+            OnHealthBarEmpty?.Invoke(_healthBarsDepleted);
 
-            if (_remainingHealthBars > 0) {
+            if (_healthBarsDepleted < _numHealthBars) {
                 _currentHealth = _maxHealth;
             } else {
                 _isDead = true;
