@@ -35,6 +35,17 @@ public class HealController : MonoBehaviour {
             return;
         }
 
+        if (_targets.ContainsKey(hitDamagable)) {
+            return;
+        }
+
+        int myfaction = GetComponentInParent<CharacterStats>().faction;
+        int otherFaction = collision.gameObject.GetComponent<CharacterStats>().faction;
+
+        if (myfaction != otherFaction) {
+            return;
+        }
+
         Ticker newTicker = new Ticker();
         newTicker.timeStarted = Time.time;
         _targets.Add(hitDamagable, newTicker);
