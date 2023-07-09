@@ -49,11 +49,13 @@ MonoBehaviour:
   MOVE_SPEED: 0
   _onSpawnSFX: {fileID: 0}
   _onloopSFX: {fileID: 0}
-  _onHitSFX: {fileID: 0}
+  _onHitSFX: {fileID: 8300000, guid: cf816bdc687a6fb4eb3597db3f098e52, type: 3}
   _destroyOnImpact: 0
   _missEffects: {fileID: 0}
   _impactEffects: {fileID: 1932630230815302502, guid: 53dfd5d420d1f864ea153f6b978559ae, type: 3}
   _maxDistance: -1
+  _damage: 10
+  _shiftPitch: 0
 --- !u!114 &6490187757040367964
 MonoBehaviour:
   m_ObjectHideFlags: 0
