@@ -448,6 +448,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5039343616664684836}
   - component: {fileID: 2485865108306326632}
+  - component: {fileID: 4296425032706105256}
   m_Layer: 0
   m_Name: Cursor
   m_TagString: Untagged
@@ -489,6 +490,18 @@ MonoBehaviour:
   rightClickBar: {fileID: 1908827334404674252}
   spacebarBar: {fileID: 2690955598251480325}
   abilities: {fileID: 0}
+--- !u!225 &4296425032706105256
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095898034323084820}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &8160800940407034031
 GameObject:
   m_ObjectHideFlags: 0
