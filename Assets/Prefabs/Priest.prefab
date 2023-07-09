@@ -9,15 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: preferredMaxRange
-      value: 3
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1156246916742907674, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: preferredMinRange
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3444906719881861685, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Name
-      value: Knight
+      value: Priest
       objectReference: {fileID: 0}
     - target: {fileID: 3852860896828845083, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: arrowAbility.CastTime
@@ -33,12 +33,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6546059514857901335, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690323351890109043, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7878613215344888823, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 20852223, guid: 7d0c829ee5aee1f40bb3ab51931fe891, type: 3}
+      objectReference: {fileID: -881825240, guid: 7d0c829ee5aee1f40bb3ab51931fe891, type: 3}
     - target: {fileID: 8204057701746915760, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: m_IsActive
       value: 0
