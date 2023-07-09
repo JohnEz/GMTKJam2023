@@ -35,6 +35,9 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private int _damage = 10;
 
+    [SerializeField]
+    private bool _shiftPitch = false;
+
     public void Launch(Transform origin, Vector3 target) {
         _origin = origin;
 
@@ -45,7 +48,7 @@ public class Projectile : MonoBehaviour {
 
         transform.rotation = rotation;
 
-        AudioManager.Instance.PlaySound(_onSpawnSFX, transform.position);
+        AudioManager.Instance.PlaySound(_onSpawnSFX, transform.position, _shiftPitch);
         AudioManager.Instance.PlaySound(_onloopSFX, transform);
     }
 
