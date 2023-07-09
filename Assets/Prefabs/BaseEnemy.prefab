@@ -164,6 +164,7 @@ MonoBehaviour:
   MoveSpeed: 4
   _healthBars: 2c010000
   faction: 1
+  _onDeathSFX: {fileID: 8300000, guid: 285b41f1ac7e6944b829dd6115dea4c7, type: 3}
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0

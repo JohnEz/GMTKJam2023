@@ -16,6 +16,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
+      propertyPath: _onDeathSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f2e062c4fbb927d48a5ececa989e283a, type: 3}
+    - target: {fileID: 1923494030384655132, guid: 50556abaf65b5bc4fb9fdc9fbc353bc7, type: 3}
       propertyPath: _healthBars.Array.data[0]
       value: 180
       objectReference: {fileID: 0}
