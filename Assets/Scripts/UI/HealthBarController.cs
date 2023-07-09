@@ -1,8 +1,11 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour {
+    [SerializeField]
+    private List<Color> _healthBarColours;
 
     [SerializeField]
     private Image healthBar;
@@ -24,21 +27,20 @@ public class HealthBarController : MonoBehaviour {
 
     private void Awake() {
         SetHp();
-
-        if (nameText) {
-            nameText.text = _myStats.Name;
-        }
+        SetHealthBarColour(0);
     }
 
     public void OnEnable() {
         if (_myStats != null) {
             _myStats.OnHealthChanged += SetHp;
+            _myStats.OnHealthBarDepleted += OnHealthBarDepleted;
         }
     }
 
     public void OnDisable() {
         if (_myStats != null) {
             _myStats.OnHealthChanged -= SetHp;
+            _myStats.OnHealthBarDepleted -= OnHealthBarDepleted;
         }
     }
 
@@ -73,5 +75,13 @@ public class HealthBarController : MonoBehaviour {
         damageBar.fillAmount = Mathf.Max(damageBar.fillAmount, targetHealthPercent);
 
         damageBarShrinkTimer = DAMAGE_BAR_SHRINK_TIMER_MAX;
+    }
+
+    private void OnHealthBarDepleted(int index) {
+        SetHealthBarColour(index + 1);
+    }
+
+    private void SetHealthBarColour(int colourIndex) {
+        healthBar.color = _healthBarColours[Mathf.Min(colourIndex, _healthBarColours.Count - 1)];
     }
 }

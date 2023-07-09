@@ -161,8 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Unknown
   MoveSpeed: 4
-  _maxHealth: 150
-  _numHealthBars: 1
+  _healthBars: 64000000
 --- !u!114 &8427896825273160408
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CharacterStats : MonoBehaviour {
@@ -7,60 +8,45 @@ public class CharacterStats : MonoBehaviour {
     public float MoveSpeed;
 
     [SerializeField]
-    private int _maxHealth = 100;
+    private List<int> _healthBars = new() { 100 };
 
-    [HideInInspector]
-    public int MaxHealth { get => _maxHealth; set => SetMaxHealth(value); }
+    private int _currentHealthBar = 0;
+
+    public int MaxHealth => _healthBars[_currentHealthBar];
 
     private int _currentHealth;
-
-    [SerializeField]
-    private int _numHealthBars = 1;
-
-    private int _remainingHealthBars;
 
     [HideInInspector]
     public int CurrentHealth { get => _currentHealth; set => SetCurrentHealth(value); }
 
-    private bool _isDead;
-
-    public bool IsDead { get => _isDead; }
+    public bool IsDead { get; private set; }
 
     public Action OnHealthChanged;
 
-    public Action<int> OnHealthBarEmpty;
+    public Action<int> OnHealthBarDepleted;
 
     public Action OnDeath;
 
     private void Awake() {
-        _remainingHealthBars = _numHealthBars;
+        _currentHealthBar = 0;
         CurrentHealth = MaxHealth;
     }
 
     private void SetCurrentHealth(int value) {
-        _currentHealth = Math.Clamp(value, 0, _isDead ? 0 : _maxHealth);
+        _currentHealth = Math.Clamp(value, 0, IsDead ? 0 : MaxHealth);
 
-        if (!_isDead && _currentHealth <= 0) {
-            _remainingHealthBars--;
+        if (!IsDead && _currentHealth <= 0) {
+            OnHealthBarDepleted?.Invoke(_currentHealthBar);
 
-            OnHealthBarEmpty?.Invoke(_remainingHealthBars);
+            int nextHealthBar = _currentHealthBar + 1;
 
-            if (_remainingHealthBars > 0) {
-                _currentHealth = _maxHealth;
+            if (nextHealthBar < _healthBars.Count) {
+                _currentHealthBar = nextHealthBar;
+                _currentHealth = _healthBars[_currentHealthBar];
             } else {
-                _isDead = true;
+                IsDead = true;
                 OnDeath?.Invoke();
             }
-        }
-
-        OnHealthChanged?.Invoke();
-    }
-
-    private void SetMaxHealth(int value) {
-        _maxHealth = value;
-
-        if (_maxHealth < _currentHealth) {
-            _currentHealth = _maxHealth;
         }
 
         OnHealthChanged?.Invoke();

@@ -1,8 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SceneChanger))]
 [RequireComponent(typeof(Quit))]
@@ -17,6 +15,7 @@ public class GameManager : Singleton<GameManager> {
     public enum GameState {
         Intro,
         Cutscene,
+        PhaseInterlude,
         Combat,
         Victory,
         Defeat,
@@ -51,6 +50,9 @@ public class GameManager : Singleton<GameManager> {
             case GameState.Combat:
                 // Allow player and enemy movement
                 break;
+            case GameState.PhaseInterlude:
+                // FINDME: Jamie I guess we do something here with a director?
+                break;
             case GameState.Victory:
                 CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
                 break;
@@ -63,11 +65,17 @@ public class GameManager : Singleton<GameManager> {
         }
     }
 
+    public void ResumeCombat() {
+        // FINDME: Jamie I guess this is called when we're done with the interlude
+        TransitionGameState(GameState.Combat);
+    }
+
     private void Awake() {
         Adventurers.ForEach((adventurer) => {
             adventurer.OnDeath += CheckGameOver;
         });
 
+        Player.OnHealthBarDepleted += OnHealthBarDepleted;
         Player.OnDeath += CheckGameOver;
 
         if (skipIntro) {
@@ -75,6 +83,10 @@ public class GameManager : Singleton<GameManager> {
         } else if (introDirector) {
             introDirector.GetComponent<PlayableDirector>().Play();
         }
+    }
+
+    private void OnHealthBarDepleted(int index) {
+        // TransitionGameState(GameState.PhaseInterlude);
     }
 
     private void CheckGameOver() {
@@ -94,9 +106,5 @@ public class GameManager : Singleton<GameManager> {
         } else if (allEnemiesDead) {
             TransitionGameState(GameState.Victory);
         }
-    }
-
-    public void Restart() {
-        SceneManager.LoadScene("MainMenu");
     }
 }
