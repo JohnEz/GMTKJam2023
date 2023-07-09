@@ -126,6 +126,9 @@ public class GameManager : Singleton<GameManager> {
     }
 
     private void CheckGameOver() {
+        // TODO HACK
+        Player.GetComponentInChildren<Animator>().SetTrigger("onDeath");
+
         if (IsGameOver) {
             return;
         }
