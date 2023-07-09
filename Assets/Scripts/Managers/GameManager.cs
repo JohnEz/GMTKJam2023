@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(SceneChanger))]
+[RequireComponent(typeof(Quit))]
 public class GameManager : Singleton<GameManager> {
 
     public List<CharacterStats> Adventurers;
@@ -49,13 +52,13 @@ public class GameManager : Singleton<GameManager> {
                 // Allow player and enemy movement
                 break;
             case GameState.Victory:
-                CanvasManager.Instance.ShowGameOver("Game Over", "The world remains at peril...");
+                CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
                 break;
             case GameState.Defeat:
-                CanvasManager.Instance.ShowGameOver("Victory!", "The world is safe again, for now...");
+                CanvasManager.Instance.GameOverScreen.Show("Victory!", "The world is safe again, for now...", "Replay");
                 break;
             case GameState.MutualDestruction:
-                CanvasManager.Instance.ShowGameOver("Mutual Destruction", "Couldn\'t you all just get along?");
+                CanvasManager.Instance.GameOverScreen.Show("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
                 break;
         }
     }
@@ -91,6 +94,9 @@ public class GameManager : Singleton<GameManager> {
         } else if (allEnemiesDead) {
             TransitionGameState(GameState.Victory);
         }
+    }
 
+    public void Restart() {
+        SceneManager.LoadScene("MainMenu");
     }
 }
