@@ -77,4 +77,8 @@ public class LavaController : MonoBehaviour {
 
         AudioManager.Instance.PlaySound(_burnSFX, transform.position);
     }
+
+    public void ClearTargets() {
+        _targets.Clear();
+    }
 }
