@@ -220,6 +220,7 @@ MonoBehaviour:
   Name: Big Bad Enemy Crab
   MoveSpeed: 4
   _maxHealth: 100
+  _numHealthBars: 2
 --- !u!114 &1276620086668443503
 MonoBehaviour:
   m_ObjectHideFlags: 0
