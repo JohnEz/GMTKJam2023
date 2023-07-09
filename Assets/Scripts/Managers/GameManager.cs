@@ -52,6 +52,7 @@ public class GameManager : Singleton<GameManager> {
                 break;
             case GameState.PhaseInterlude:
                 // FINDME: Jamie I guess we do something here with a director?
+                Invoke(nameof(ResumeCombat), 3f);
                 break;
             case GameState.Victory:
                 CanvasManager.Instance.GameOverScreen.Show("Game Over", "The world remains at peril...", "Retry");
@@ -86,7 +87,7 @@ public class GameManager : Singleton<GameManager> {
     }
 
     private void OnHealthBarDepleted(int index) {
-        // TransitionGameState(GameState.PhaseInterlude);
+        TransitionGameState(GameState.PhaseInterlude);
     }
 
     private void CheckGameOver() {
