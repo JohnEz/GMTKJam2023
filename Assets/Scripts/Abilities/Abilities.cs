@@ -6,6 +6,8 @@ public class Abilities : MonoBehaviour {
     [SerializeField]
     private List<Ability> _abilities;
 
+    public List<Ability> AbilitiesList { get => _abilities; }
+
     private CastController _castController;
 
     public void Awake() {
