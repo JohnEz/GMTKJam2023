@@ -8185,7 +8185,7 @@ MonoBehaviour:
   - {fileID: 703837092}
   - {fileID: 1661339855}
   Player: {fileID: 1017035335}
-  skipIntro: 0
+  skipIntro: 1
   gameState: 0
   introDirector: {fileID: 1035367921}
 --- !u!4 &1027611263
