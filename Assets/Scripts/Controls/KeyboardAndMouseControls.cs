@@ -11,11 +11,13 @@ public class KeyboardAndMouseControls : MonoBehaviour, ControlScheme {
 
     public bool MoveRight => Input.GetKey(_keyBindings.MoveRight);
 
-    public bool Ability1 => Input.GetMouseButton(_keyBindings.Ability1);
+    public bool Ability1 => Input.GetMouseButtonDown(_keyBindings.Ability1);
 
-    public bool Ability2 => Input.GetMouseButton(_keyBindings.Ability2);
+    public bool Ability2 => Input.GetMouseButtonDown(_keyBindings.Ability2);
 
-    public bool Ability3 => Input.GetKey(_keyBindings.Ability3);
+    public bool Ability3 => Input.GetKeyDown(_keyBindings.Ability3);
+
+    public bool SkipCutscene => Input.GetKeyDown(_keyBindings.SkipCutscene);
 
     public Vector3 TargetPosition {
         get {

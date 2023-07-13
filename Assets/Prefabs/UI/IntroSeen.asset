@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e07e67327b274b44af9b4f7e8066610, type: 3}
-  m_Name: DefaultKeyBindings
+  m_Script: {fileID: 11500000, guid: 2222b11e6dfe2e94ab8cde05bdfeed1a, type: 3}
+  m_Name: IntroSeen
   m_EditorClassIdentifier: 
-  MoveUp: 119
-  MoveDown: 115
-  MoveLeft: 97
-  MoveRight: 100
-  Ability1: 0
-  Ability2: 1
-  Ability3: 32
-  SkipCutscene: 46
+  _initialValue: 0
+  Value: 0

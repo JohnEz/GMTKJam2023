@@ -9,10 +9,6 @@ public class GameManager : Singleton<GameManager> {
 
     public CharacterStats Player;
 
-    public bool skipIntro = false;
-
-    public bool skipInterlude = false;
-
     [SerializeField]
     private AudioClip _onDefeatSFX;
 
@@ -20,8 +16,8 @@ public class GameManager : Singleton<GameManager> {
     private AudioClip _onVictorySFX;
 
     public enum GameState {
+        Initial,
         Intro,
-        Cutscene,
         PhaseInterlude,
         Combat,
         Victory,
@@ -29,12 +25,17 @@ public class GameManager : Singleton<GameManager> {
         MutualDestruction
     }
 
-    public GameState gameState = GameState.Intro;
+    public GameState gameState = GameState.Initial;
 
     public GameObject introDirector;
+
     public GameObject interludeDirector;
 
     public bool IsGameActive => gameState == GameState.Combat;
+
+    public bool IsInCutscene =>
+        gameState == GameState.Intro
+        || gameState == GameState.PhaseInterlude;
 
     public bool IsGameOver =>
         gameState == GameState.Victory
@@ -47,25 +48,22 @@ public class GameManager : Singleton<GameManager> {
     [SerializeField]
     private GameEvent _startCombatEvent;
 
-    public void EndIntro() {
-        TransitionGameState(GameState.Combat);
-    }
-
-    public void EndInterlude() {
-        Player.GetComponentInChildren<Abilities>().EnableAbility(2);
-        TransitionGameState(GameState.Combat);
-    }
-
     public void TransitionGameState(GameState newState) {
+        if (newState == gameState) {
+            return;
+        }
+
+        switch (gameState) {
+            case GameState.Combat:
+                StopCombat();
+                break;
+        }
+
         gameState = newState;
 
         switch (newState) {
             case GameState.Intro:
-                // Play intro
-                break;
-
-            case GameState.Cutscene:
-                // Play cutscene
+                StartIntro();
                 break;
 
             case GameState.Combat:
@@ -73,8 +71,7 @@ public class GameManager : Singleton<GameManager> {
                 break;
 
             case GameState.PhaseInterlude:
-                StopCombat();
-                interludeDirector.GetComponent<PlayableDirector>().Play();
+                StartInterlude();
                 break;
 
             case GameState.Victory:
@@ -89,6 +86,27 @@ public class GameManager : Singleton<GameManager> {
                 OnGameOver("Mutual Destruction", "Couldn\'t you all just get along?", "Retry");
                 break;
         }
+    }
+
+    public void StartIntro() {
+        introDirector.GetComponent<PlayableDirector>().Play();
+        CanvasManager.Instance.CutsceneSkip.OnStartIntro();
+    }
+
+    public void EndIntro() {
+        CanvasManager.Instance.CutsceneSkip.OnEndIntro();
+        TransitionGameState(GameState.Combat);
+    }
+
+    public void StartInterlude() {
+        interludeDirector.GetComponent<PlayableDirector>().Play();
+        CanvasManager.Instance.CutsceneSkip.OnStartInterlude();
+    }
+
+    public void EndInterlude() {
+        CanvasManager.Instance.CutsceneSkip.OnEndInterlude();
+        Player.GetComponentInChildren<Abilities>().EnableAbility(2);
+        TransitionGameState(GameState.Combat);
     }
 
     private void StopCombat() {
@@ -111,22 +129,15 @@ public class GameManager : Singleton<GameManager> {
         Player.OnHealthBarDepleted += OnHealthBarDepleted;
         Player.OnDeath += OnPlayerDeath;
 
-        if (skipIntro) {
-            TransitionGameState(GameState.Combat);
-        } else if (introDirector) {
-            introDirector.GetComponent<PlayableDirector>().Play();
-        }
+        TransitionGameState(GameState.Intro);
     }
 
     private void OnHealthBarDepleted(int index) {
         if (index == 0) {
-            if (skipInterlude) {
-                EndInterlude();
-            } else {
-                TransitionGameState(GameState.PhaseInterlude);
-            }
+            TransitionGameState(GameState.PhaseInterlude);
         }
     }
+
     private void OnPlayerDeath() {
         // TODO HACK
         Player.GetComponentInChildren<Animator>().SetTrigger("onDeath");
@@ -157,7 +168,6 @@ public class GameManager : Singleton<GameManager> {
     }
 
     private void OnGameOver(string title, string message, string playButtonText) {
-        StopCombat();
         CanvasManager.Instance.GameOverScreen.Show(title, message, playButtonText);
         AudioManager.Instance.GetComponent<AudioSource>().enabled = false;
     }

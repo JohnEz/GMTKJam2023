@@ -15,5 +15,7 @@ public interface ControlScheme {
 
     bool Ability3 { get; }
 
+    bool SkipCutscene { get; }
+
     Vector3 TargetPosition { get; }
 }

@@ -15,4 +15,6 @@ public class KeyBindings : ScriptableObject {
     public int Ability2;
 
     public KeyCode Ability3;
+
+    public KeyCode SkipCutscene;
 }
