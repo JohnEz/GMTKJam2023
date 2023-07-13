@@ -21,6 +21,9 @@ public class Crosshair : MonoBehaviour {
     [SerializeField]
     private AnimationCurve pulseCurve;
 
+    [SerializeField]
+    private Transform cursorTransform;
+
     private void Awake() {
         leftClickBar.fillAmount = 0;
         rightClickBar.fillAmount = 0;
@@ -58,10 +61,10 @@ public class Crosshair : MonoBehaviour {
     }
 
     private void Pulse() {
-        Sequence sequence = DOTween.Sequence();
-
-        sequence.Join(transform.DOScale(new Vector3(80f, 80f, 80f), .15f));
-        sequence.Join(transform.DOScale(new Vector3(24f, 24f, 24f), .15f));
+        Sequence sequence = DOTween.Sequence()
+            .Append(cursorTransform.DOScale(new Vector3(1.2f, 1.2f, 1.2f), .125f).SetEase(pulseCurve))
+            .Append(cursorTransform.DOScale(new Vector3(1f, 1f, 1f), .125f).SetEase(pulseCurve));
+        sequence.SetLoops(1);
     }
 
     private void FollowMouse() {
