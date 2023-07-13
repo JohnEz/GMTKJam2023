@@ -40,7 +40,7 @@ public class CameraManager : Singleton<CameraManager> {
     }
 
     private void SetShakeIntensity(CinemachineVirtualCamera camera, float intensity) {
-        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = _gameCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        CinemachineBasicMultiChannelPerlin cinemachineBasicMultiChannelPerlin = camera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
         cinemachineBasicMultiChannelPerlin.m_AmplitudeGain = intensity;
     }

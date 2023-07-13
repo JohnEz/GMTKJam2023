@@ -49,7 +49,7 @@ public class CharacterCutscene : MonoBehaviour {
     }
 
     public void ShakeScreen() {
-        CameraManager.Instance.ShakeCameraInterlude(2f, .75f);
+        CameraManager.Instance.ShakeCameraInterlude(2f, 1f);
     }
 
     private IEnumerator MoveToTarget(Vector3 newTarget) {
