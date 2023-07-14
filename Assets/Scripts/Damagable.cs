@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Damagable : MonoBehaviour {
@@ -12,23 +11,35 @@ public class Damagable : MonoBehaviour {
         _myStats = GetComponent<CharacterStats>();
     }
 
-    public void TakeDamage(int damage) {
+    public void TakeDamage(int damage, Action onResolve = null) {
         if (_myStats) {
+            if (_myStats.IsDead) {
+                return;
+            }
+
             _myStats.TakeDamage(damage);
         }
 
         if (_flashTarget) {
             _flashTarget.StartFlash();
         }
+
+        onResolve?.Invoke();
     }
 
-    public void TakeHealing(int healing) {
+    public void TakeHealing(int healing, Action onResolve = null) {
         if (_myStats) {
+            if (_myStats.IsDead) {
+                return;
+            }
+
             _myStats.TakeHealing(healing);
         }
 
         if (_flashTarget) {
             _flashTarget.StartFlash(true);
         }
+
+        onResolve?.Invoke();
     }
 }

@@ -6,6 +6,6 @@ public class GameEvent : ScriptableObject {
     public Action OnEvent;
 
     public void Raise() {
-        OnEvent.Invoke();
+        OnEvent?.Invoke();
     }
 }
