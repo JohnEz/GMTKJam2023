@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Beam : MonoBehaviour {
-    private Dictionary<Damagable, Ticker> _targets;
+    private List<Damagable> _targets;
 
     private Transform _target;
 
@@ -22,7 +22,7 @@ public class Beam : MonoBehaviour {
     private Animator _animator;
 
     private void Awake() {
-        _targets = new Dictionary<Damagable, Ticker>();
+        _targets = new();
     }
 
     public void Setup(Transform target) {
@@ -59,14 +59,6 @@ public class Beam : MonoBehaviour {
         }
 
         FaceMouse();
-
-        foreach (Damagable target in _targets.Keys) {
-            int timesShouldHaveTicked = (int)(Mathf.Floor((Time.time - _targets[target].timeStarted) / _tickRate));
-
-            if (timesShouldHaveTicked > _targets[target].tickCounter) {
-                Tick(target);
-            }
-        }
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
@@ -76,17 +68,11 @@ public class Beam : MonoBehaviour {
 
         Damagable hitDamagable = collision.gameObject.GetComponent<Damagable>();
 
-        if (!hitDamagable) {
+        if (!hitDamagable || _targets.Contains(hitDamagable)) {
             return;
         }
 
-        if (_targets.ContainsKey(hitDamagable)) {
-            return;
-        }
-
-        Ticker newTicker = new Ticker();
-        newTicker.timeStarted = Time.time;
-        _targets.Add(hitDamagable, newTicker);
+        _targets.Add(hitDamagable);
 
         Tick(hitDamagable);
     }
@@ -102,20 +88,17 @@ public class Beam : MonoBehaviour {
     }
 
     private void Tick(Damagable hitDamagable) {
-        if (!_targets.ContainsKey(hitDamagable)) {
+        if (!_targets.Contains(hitDamagable)) {
             return;
         }
 
-        CharacterStats hitStats = hitDamagable.GetComponent<CharacterStats>();
+        hitDamagable.TakeDamage(3, () => {
+            StartCoroutine(QueueNextTick(hitDamagable));
+        });
+    }
 
-        if (hitStats && hitStats.IsDead) {
-            return;
-        }
-
-        Ticker ticker = _targets[hitDamagable];
-
-        ticker.tickCounter += 1;
-
-        hitDamagable.TakeDamage(3);
+    private IEnumerator QueueNextTick(Damagable hitDamagable) {
+        yield return new WaitForSeconds(_tickRate);
+        Tick(hitDamagable);
     }
 }

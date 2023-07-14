@@ -2,13 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ticker {
-    public float timeStarted = 0;
-    public float tickCounter = 0;
-}
-
 public class LavaController : MonoBehaviour {
-    private Dictionary<Damagable, Ticker> _targets;
+    private List<Damagable> _targets;
 
     [SerializeField]
     private float _tickRate = .3f;
@@ -17,33 +12,17 @@ public class LavaController : MonoBehaviour {
     private AudioClip _burnSFX;
 
     private void Awake() {
-        _targets = new Dictionary<Damagable, Ticker>();
-    }
-
-    private void Update() {
-        foreach (Damagable target in _targets.Keys) {
-            int timesShouldHaveTicked = (int)(Mathf.Floor((Time.time - _targets[target].timeStarted) / _tickRate));
-
-            if (timesShouldHaveTicked > _targets[target].tickCounter) {
-                Tick(target);
-            }
-        }
+        _targets = new();
     }
 
     public void OnTriggerEnter2D(Collider2D collision) {
         Damagable hitDamagable = collision.gameObject.GetComponent<Damagable>();
 
-        if (!hitDamagable) {
+        if (!hitDamagable || _targets.Contains(hitDamagable)) {
             return;
         }
 
-        if (_targets.ContainsKey(hitDamagable)) {
-            return;
-        }
-
-        Ticker newTicker = new Ticker();
-        newTicker.timeStarted = Time.time;
-        _targets.Add(hitDamagable, newTicker);
+        _targets.Add(hitDamagable);
 
         Tick(hitDamagable);
     }
@@ -59,26 +38,18 @@ public class LavaController : MonoBehaviour {
     }
 
     private void Tick(Damagable hitDamagable) {
-        if (!_targets.ContainsKey(hitDamagable)) {
+        if (!_targets.Contains(hitDamagable)) {
             return;
         }
 
-        CharacterStats hitStats = hitDamagable.GetComponent<CharacterStats>();
-
-        if (hitStats && hitStats.IsDead) {
-            return;
-        }
-
-        Ticker ticker = _targets[hitDamagable];
-
-        ticker.tickCounter += 1;
-
-        hitDamagable.TakeDamage(5);
-
-        AudioManager.Instance.PlaySound(_burnSFX, transform.position);
+        hitDamagable.TakeDamage(5, () => {
+            AudioManager.Instance.PlaySound(_burnSFX, transform.position);
+            StartCoroutine(QueueNextTick(hitDamagable));
+        });
     }
 
-    public void ClearTargets() {
-        _targets.Clear();
+    private IEnumerator QueueNextTick(Damagable hitDamagable) {
+        yield return new WaitForSeconds(_tickRate);
+        Tick(hitDamagable);
     }
 }
