@@ -36,7 +36,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Transition
   m_SortingLayers:
   - name: Terrain
     uniqueID: 3060199617

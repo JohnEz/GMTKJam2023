@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CrushFade
+  m_Controller: {fileID: 9100000, guid: c9d03bdbfe7fe2b4bb22bcbb13527083, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f8123704cbae62a4790bffcc98bf65c0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 66988e97be79c5d45acb293f5a400cd1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: bfe0a4bd26097884db0f4b9107e0eb8e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 136c44955c9a3a442a0df46b8a167d07, type: 2}
