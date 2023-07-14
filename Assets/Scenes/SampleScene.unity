@@ -23494,8 +23494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf6c12312c358f409ec367dd570dd7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
-  transitionTime: 1
+  transition: {fileID: 1514545984}
+  transitionTime: 0.75
 --- !u!1 &1035367921
 GameObject:
   m_ObjectHideFlags: 0
@@ -28629,6 +28629,11 @@ PrefabInstance:
 --- !u!224 &1514545983 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3782969379611423495, guid: e956b53630ec67f44b1114e7204f06e8, type: 3}
+  m_PrefabInstance: {fileID: 1514545982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1514545984 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3782969379611423488, guid: e956b53630ec67f44b1114e7204f06e8, type: 3}
   m_PrefabInstance: {fileID: 1514545982}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1557668551 stripped
